@@ -1,0 +1,103 @@
+<app-dashboard-shell [title]="'Invoices'" [greeting]="'Review and manage all billing records.'">
+  <!-- Summary cards -->
+  <div class="kpis">
+    <article class="kpi glass" *ngFor="let s of summary">
+      <p class="kpi__label">{{ s.label }}</p>
+      <p class="kpi__value">{{ s.value }}</p>
+    </article>
+  </div>
+
+  <!-- Invoice table + Aging donut -->
+  <div class="row row--bottom">
+    <article class="card glass">
+      <div class="card__head">
+        <div>
+          <h2 class="card__title">All Invoices</h2>
+          <p class="card__sub">Complete billing record with payment details</p>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table class="activity">
+          <thead>
+            <tr>
+              <th>Invoice</th>
+              <th>Customer</th>
+              <th>Description</th>
+              <th>Status</th>
+              <th>Due</th>
+              <th>Payment</th>
+              <th class="activity__amount">Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let inv of invoices">
+              <td class="text-sm font-mono text-[#94a3b8]">{{ inv.id }}</td>
+              <td class="text-sm text-[#cbd5e1]">{{ inv.customer }}</td>
+              <td class="text-sm text-[#94a3b8]">{{ inv.description }}</td>
+              <td>
+                <span class="inline-block px-2.5 py-1 rounded-full text-xs font-medium" [class]="statusColor(inv.status)">{{ inv.status }}</span>
+              </td>
+              <td class="text-sm text-[#94a3b8] font-mono">{{ inv.due }}</td>
+              <td class="text-sm text-[#94a3b8]">{{ inv.paymentMethod }}</td>
+              <td class="activity__amount">{{ inv.amount }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </article>
+
+    <div class="col">
+      <article class="card glass">
+        <div class="card__head">
+          <div>
+            <h2 class="card__title">Aging</h2>
+            <p class="card__sub">Outstanding invoice aging</p>
+          </div>
+        </div>
+        <div class="donut">
+          <svg viewBox="0 0 160 160" width="160" height="160" role="img" aria-label="Aging donut">
+            <circle class="donut__track" cx="80" cy="80" r="54"></circle>
+            <circle *ngFor="let d of agingData; let i = index" class="donut__seg" [class]="'seg--' + ['coral','amber','rose','tan'][i]" cx="80" cy="80" r="54" transform="rotate(-90 80 80)" [attr.stroke-dasharray]="donutDash(d.pct)" [attr.stroke-dashoffset]="donutOffset(agingData, i)"></circle>
+          </svg>
+          <div class="donut__center">
+            <span class="donut__total">AED 24.8K</span>
+            <span class="donut__caption">outstanding</span>
+          </div>
+        </div>
+        <ul class="donut__legend">
+          <li *ngFor="let d of agingData; let i = index">
+            <span class="dot" [class]="'dot--' + ['coral','amber','rose','tan'][i]"></span>
+            <span class="donut__label">{{ d.label }}</span>
+            <span class="donut__pct">{{ d.pct }}%</span>
+          </li>
+        </ul>
+      </article>
+
+      <article class="card glass">
+        <div class="card__head">
+          <div>
+            <h2 class="card__title">Payment Methods</h2>
+            <p class="card__sub">How customers pay</p>
+          </div>
+        </div>
+        <div class="donut">
+          <svg viewBox="0 0 160 160" width="140" height="140" role="img" aria-label="Payment methods donut">
+            <circle class="donut__track" cx="80" cy="80" r="54"></circle>
+            <circle *ngFor="let d of paymentMethods; let i = index" class="donut__seg" [class]="'seg--' + ['coral','amber','rose','tan'][i]" cx="80" cy="80" r="54" transform="rotate(-90 80 80)" [attr.stroke-dasharray]="donutDash(d.pct)" [attr.stroke-dashoffset]="donutOffset(paymentMethods, i)"></circle>
+          </svg>
+        </div>
+        <ul class="donut__legend">
+          <li *ngFor="let d of paymentMethods; let i = index">
+            <span class="dot" [class]="'dot--' + ['coral','amber','rose','tan'][i]"></span>
+            <span class="donut__label">{{ d.label }}</span>
+            <span class="donut__pct">{{ d.pct }}%</span>
+          </li>
+        </ul>
+      </article>
+    </div>
+  </div>
+
+  <div class="border-t border-white/[0.06] pt-8 text-center">
+    <p class="text-xs text-[#94a3b8]">Total invoiced this year &mdash; <span class="text-[#ff4500] font-mono">AED 248,160</span></p>
+  </div>
+</app-dashboard-shell>

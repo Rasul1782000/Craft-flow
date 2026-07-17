@@ -1,0 +1,176 @@
+<app-dashboard-shell [title]="'Settings'" [greeting]="'Configure your account and preferences.'" [hideSearch]="true">
+  <div class="max-w-[720px] mx-auto space-y-4 px-4 sm:px-0">
+    <div *ngIf="successMessage" class="bg-green-500/10 border border-green-500/20 rounded-xl px-4 py-3 text-green-400 text-sm">{{ successMessage }}</div>
+    <div *ngIf="errorMessage" class="bg-red-500/10 border border-red-500/20 rounded-xl px-4 py-3 text-red-400 text-sm">{{ errorMessage }}</div>
+
+    <!-- Profile -->
+    <div class="bg-white/[0.03] border border-white/[0.06] rounded-xl p-4 sm:p-6">
+      <h2 class="text-sm font-medium text-[#94a3b8] mb-4 sm:mb-5">Profile</h2>
+      <div class="flex items-center gap-3 sm:gap-4 mb-5 sm:mb-6">
+        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=96&h=96&fit=crop&crop=face" alt="Profile" class="w-11 h-11 sm:w-14 sm:h-14 rounded-xl object-cover border border-white/10">
+        <div class="min-w-0">
+          <p class="text-sm sm:text-base font-medium truncate">{{ user.firstName }} {{ user.lastName }}</p>
+          <p class="text-xs sm:text-sm text-[#94a3b8] truncate">{{ user.email }}</p>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+        <div>
+          <label class="block text-xs text-[#94a3b8] mb-1.5">First Name</label>
+          <input type="text" [(ngModel)]="user.firstName" class="w-full bg-white/[0.05] border border-white/[0.08] rounded-lg px-3 py-2.5 text-sm text-[#cbd5e1] outline-none focus:border-[#ff4500]/50 transition-colors">
+        </div>
+        <div>
+          <label class="block text-xs text-[#94a3b8] mb-1.5">Last Name</label>
+          <input type="text" [(ngModel)]="user.lastName" class="w-full bg-white/[0.05] border border-white/[0.08] rounded-lg px-3 py-2.5 text-sm text-[#cbd5e1] outline-none focus:border-[#ff4500]/50 transition-colors">
+        </div>
+        <div class="sm:col-span-2">
+          <label class="block text-xs text-[#94a3b8] mb-1.5">Email</label>
+          <input type="email" [value]="user.email" class="w-full bg-white/[0.05] border border-white/[0.08] rounded-lg px-3 py-2.5 text-sm text-[#64748b] outline-none cursor-not-allowed" readonly>
+        </div>
+      </div>
+    </div>
+
+    <!-- Preferences -->
+    <h3 class="text-xs font-medium text-[#64748b] uppercase tracking-wider px-1 mt-6">Preferences</h3>
+
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+      <!-- Theme -->
+      <div class="bg-white/[0.03] border border-white/[0.06] rounded-xl p-4 sm:p-5">
+        <div class="flex items-center justify-between sm:flex-col sm:items-center sm:text-center">
+          <div class="flex items-center gap-3 sm:mb-3">
+            <img [src]="darkMode ? 'https://images.unsplash.com/photo-1507400492013-162706c8c05e?w=64&h=64&fit=crop' : 'https://images.unsplash.com/photo-1504893524553-b855bce32c67?w=64&h=64&fit=crop'" alt="Theme" class="w-10 h-10 rounded-lg object-cover flex-shrink-0">
+            <div class="text-left sm:text-center">
+              <p class="text-sm font-medium text-[#cbd5e1]">Theme</p>
+              <p class="text-xs text-[#94a3b8]">{{ darkMode ? 'Dark mode' : 'Light mode' }}</p>
+            </div>
+          </div>
+          <button type="button" (click)="toggleTheme()" class="w-12 h-6 rounded-full relative transition-colors cursor-pointer flex-shrink-0 sm:mt-0" [style.background]="darkMode ? '#ff4500' : 'rgba(255,255,255,0.15)'">
+            <span class="absolute top-0.5 w-5 h-5 rounded-full bg-white transition-all shadow-sm" [style.left]="darkMode ? 'calc(100% - 22px)' : '2px'"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Language -->
+      <div class="bg-white/[0.03] border border-white/[0.06] rounded-xl p-4 sm:p-5">
+        <div class="flex items-center justify-between sm:flex-col sm:items-center sm:text-center">
+          <div class="flex items-center gap-3 sm:mb-3">
+            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=64&h=64&fit=crop" alt="Language" class="w-10 h-10 rounded-lg object-cover flex-shrink-0">
+            <div class="text-left sm:text-center">
+              <p class="text-sm font-medium text-[#cbd5e1]">Language</p>
+              <p class="text-xs text-[#94a3b8]">Display language</p>
+            </div>
+          </div>
+          <span class="text-xs text-[#94a3b8] bg-white/[0.06] px-3 py-1.5 rounded-lg sm:mt-0">English</span>
+        </div>
+      </div>
+
+      <!-- Timezone -->
+      <div class="bg-white/[0.03] border border-white/[0.06] rounded-xl p-4 sm:p-5">
+        <div class="flex items-center justify-between sm:flex-col sm:items-center sm:text-center">
+          <div class="flex items-center gap-3 sm:mb-3">
+            <img src="https://images.unsplash.com/photo-1501159599894-67f5b6a92e6b?w=64&h=64&fit=crop" alt="Timezone" class="w-10 h-10 rounded-lg object-cover flex-shrink-0">
+            <div class="text-left sm:text-center">
+              <p class="text-sm font-medium text-[#cbd5e1]">Timezone</p>
+              <p class="text-xs text-[#94a3b8]">Your local time</p>
+            </div>
+          </div>
+          <span class="text-xs text-[#94a3b8] bg-white/[0.06] px-3 py-1.5 rounded-lg sm:mt-0">GMT+4</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Notifications -->
+    <h3 class="text-xs font-medium text-[#64748b] uppercase tracking-wider px-1 mt-6">Notifications</h3>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+      <!-- Email Digest -->
+      <div class="bg-white/[0.03] border border-white/[0.06] rounded-xl p-4 sm:p-5">
+        <div class="flex items-center justify-between mb-3">
+          <div class="flex items-center gap-3">
+            <img src="https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=64&h=64&fit=crop" alt="Email" class="w-10 h-10 rounded-lg object-cover flex-shrink-0">
+            <div>
+              <p class="text-sm font-medium text-[#cbd5e1]">Email Digest</p>
+              <p class="text-xs text-[#94a3b8]">Weekly summary</p>
+            </div>
+          </div>
+          <button type="button" (click)="toggleNotifications()" class="w-12 h-6 rounded-full relative transition-colors cursor-pointer flex-shrink-0" [style.background]="notificationsEnabled ? '#ff4500' : 'rgba(255,255,255,0.15)'">
+            <span class="absolute top-0.5 w-5 h-5 rounded-full bg-white transition-all shadow-sm" [style.left]="notificationsEnabled ? 'calc(100% - 22px)' : '2px'"></span>
+          </button>
+        </div>
+        <p class="text-xs text-[#64748b] pl-[52px]">{{ notificationsEnabled ? 'Weekly digests enabled' : 'Digests turned off' }}</p>
+      </div>
+
+      <!-- Push Alerts -->
+      <div class="bg-white/[0.03] border border-white/[0.06] rounded-xl p-4 sm:p-5">
+        <div class="flex items-center justify-between mb-3">
+          <div class="flex items-center gap-3">
+            <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=64&h=64&fit=crop" alt="Push" class="w-10 h-10 rounded-lg object-cover flex-shrink-0">
+            <div>
+              <p class="text-sm font-medium text-[#cbd5e1]">Push Alerts</p>
+              <p class="text-xs text-[#94a3b8]">Real-time alerts</p>
+            </div>
+          </div>
+          <button type="button" (click)="togglePushAlerts()" class="w-12 h-6 rounded-full relative transition-colors cursor-pointer flex-shrink-0" [style.background]="pushAlertsEnabled ? '#ff4500' : 'rgba(255,255,255,0.15)'">
+            <span class="absolute top-0.5 w-5 h-5 rounded-full bg-white transition-all shadow-sm" [style.left]="pushAlertsEnabled ? 'calc(100% - 22px)' : '2px'"></span>
+          </button>
+        </div>
+        <p class="text-xs text-[#64748b] pl-[52px]">{{ pushAlertsEnabled ? 'Push notifications enabled' : 'Push turned off' }}</p>
+      </div>
+    </div>
+
+    <!-- Team Management -->
+    <div class="bg-white/[0.03] border border-white/[0.06] rounded-xl p-4 sm:p-6 mt-6">
+      <div class="flex items-center justify-between mb-4 sm:mb-5">
+        <div>
+          <h2 class="text-sm font-medium text-[#94a3b8]">Team Members</h2>
+          <p class="text-xs text-[#64748b] mt-0.5">{{ team.length }} members in workspace</p>
+        </div>
+        <button type="button" (click)="showAddMember = !showAddMember" class="px-3 py-1.5 text-xs font-medium rounded-lg transition-colors" [class]="showAddMember ? 'bg-white/[0.06] text-[#94a3b8]' : 'bg-[#ff4500] text-white hover:bg-[#e03d00]'">
+          {{ showAddMember ? 'Cancel' : '+ Add' }}
+        </button>
+      </div>
+
+      <!-- Add Member Form -->
+      <div *ngIf="showAddMember" class="bg-white/[0.04] border border-white/[0.08] rounded-lg p-3 sm:p-4 mb-4 space-y-3">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <input type="text" [(ngModel)]="newMember.name" placeholder="Full name" class="w-full bg-white/[0.05] border border-white/[0.08] rounded-lg px-3 py-2.5 text-sm text-[#cbd5e1] outline-none focus:border-[#ff4500]/50 transition-colors placeholder:text-[#64748b]">
+          <input type="email" [(ngModel)]="newMember.email" placeholder="Email address" class="w-full bg-white/[0.05] border border-white/[0.08] rounded-lg px-3 py-2.5 text-sm text-[#cbd5e1] outline-none focus:border-[#ff4500]/50 transition-colors placeholder:text-[#64748b]">
+        </div>
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+          <select [(ngModel)]="newMember.role" class="bg-white/[0.05] border border-white/[0.08] rounded-lg px-3 py-2.5 text-sm text-[#cbd5e1] outline-none focus:border-[#ff4500]/50 transition-colors">
+            <option *ngFor="let r of roles" [value]="r">{{ r }}</option>
+          </select>
+          <button type="button" (click)="addMember()" [disabled]="isAddingMember || !newMember.name.trim() || !newMember.email.trim()" class="px-4 py-2.5 bg-[#ff4500] hover:bg-[#e03d00] text-white text-sm font-medium rounded-lg transition-colors disabled:opacity-50 sm:ml-auto">
+            {{ isAddingMember ? 'Adding...' : 'Add Member' }}
+          </button>
+        </div>
+      </div>
+
+      <!-- Team List -->
+      <div class="space-y-1">
+        <div *ngFor="let m of team" class="flex items-center justify-between py-3 px-3 rounded-lg hover:bg-white/[0.03] transition-colors group">
+          <div class="flex items-center gap-3 min-w-0 flex-1">
+            <img [src]="getAvatarUrl(m.name)" [alt]="m.name" class="w-9 h-9 rounded-lg flex-shrink-0 object-cover border border-white/10">
+            <div class="min-w-0 flex-1">
+              <p class="text-sm text-[#cbd5e1] truncate">{{ m.name }}</p>
+              <p class="text-xs text-[#94a3b8] truncate">{{ m.email }}</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0 ml-2 sm:ml-4">
+            <span class="hidden sm:inline text-xs text-[#94a3b8] bg-white/[0.05] px-2 py-1 rounded">{{ m.role }}</span>
+            <span class="w-2 h-2 rounded-full" [class.bg-green-400]="m.status === 'active'" [class.bg-amber-400]="m.status === 'pending'"></span>
+            <button type="button" (click)="deleteMember(m)" [disabled]="deletingMemberId === m.id" class="text-[#64748b] hover:text-red-400 transition-all text-xs p-1.5 rounded-lg hover:bg-red-400/10 sm:opacity-0 sm:group-hover:opacity-100" title="Remove member">
+              <i class="ph ph-trash"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Save Button -->
+    <div class="flex justify-end pt-2 pb-6">
+      <button (click)="save()" [disabled]="isSaving" class="w-full sm:w-auto px-6 py-2.5 bg-[#ff4500] hover:bg-[#e03d00] text-white text-sm font-medium rounded-lg transition-colors disabled:opacity-50">
+        {{ isSaving ? 'Saving...' : 'Save Changes' }}
+      </button>
+    </div>
+  </div>
+</app-dashboard-shell>

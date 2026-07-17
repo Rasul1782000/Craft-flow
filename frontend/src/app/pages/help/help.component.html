@@ -1,0 +1,52 @@
+<app-dashboard-shell [title]="'Help & Support'" [greeting]="'Find answers and get assistance.'" [hideSearch]="true">
+  <div class="grid grid-cols-2 gap-5 mb-10">
+    <div *ngFor="let cat of categories" class="bg-white/[0.03] border border-white/[0.06] rounded-xl p-6">
+      <h3 class="text-sm font-medium text-[#cbd5e1] mb-4 flex items-center gap-2">
+        <svg *ngIf="cat.icon === 'rocket'" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#ff4500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2s-6 4-6 10c0 4 2.5 8 6 10 3.5-2 6-6 6-10 0-6-6-10-6-10z"/>
+          <circle cx="12" cy="12" r="2.5" fill="#ff4500" stroke="none"/>
+        </svg>
+        <svg *ngIf="cat.icon === 'credit-card'" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#ef8f2a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="1" y="4" width="22" height="16" rx="2"/>
+          <line x1="1" y1="10" x2="23" y2="10"/>
+        </svg>
+        <svg *ngIf="cat.icon === 'user'" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#fb7185" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+          <circle cx="12" cy="7" r="4"/>
+        </svg>
+        <svg *ngIf="cat.icon === 'plugs'" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#d9a06b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+        </svg>
+        {{ cat.name }}
+      </h3>
+      <ul class="space-y-2.5">
+        <li *ngFor="let a of cat.articles" class="flex items-center justify-between py-1.5 px-3 -mx-3 rounded-lg hover:bg-white/[0.03] transition-colors cursor-pointer">
+          <span class="text-sm text-[#94a3b8]">{{ a.title }}</span>
+          <span class="text-xs text-[#94a3b8] font-mono">{{ a.views }}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="bg-white/[0.03] border border-white/[0.06] rounded-xl p-6 text-center">
+    <h3 class="text-sm font-medium text-[#cbd5e1] mb-2">Still need help?</h3>
+    <p class="text-xs text-[#94a3b8] mb-4">Our support team typically responds within 4 hours.</p>
+    <span class="inline-flex items-center gap-2 text-sm text-[#ff4500]">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+        <polyline points="22,6 12,13 2,6"/>
+      </svg>
+      support@craftflow.co
+    </span>
+  </div>
+
+  <div class="border-t border-white/[0.06] mt-10 pt-8 text-center">
+    <svg viewBox="0 0 120 20" class="w-full max-w-[120px] mx-auto opacity-20" fill="none">
+      <circle cx="15" cy="10" r="5" stroke="#ff4500" stroke-width="1" fill="#ff4500" opacity="0.3"/>
+      <circle cx="45" cy="10" r="5" stroke="#ef8f2a" stroke-width="1" fill="none"/>
+      <circle cx="75" cy="10" r="5" stroke="#fb7185" stroke-width="1" fill="none"/>
+      <circle cx="105" cy="10" r="5" stroke="#d9a06b" stroke-width="1" fill="none"/>
+    </svg>
+  </div>
+</app-dashboard-shell>

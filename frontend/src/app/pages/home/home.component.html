@@ -1,0 +1,499 @@
+<div class="min-h-screen bg-[#050505] selection:bg-[#FF4500] selection:text-white">
+  <div class="noise-overlay"></div>
+
+  <nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 py-8">
+    <div class="container mx-auto px-6 flex items-center justify-between">
+      <a routerLink="/" id="nav-logo-link" class="text-2xl font-bold tracking-tighter font-serif text-white">
+        CraftFlow.
+      </a>
+
+      <div class="hidden md:flex items-center space-x-8">
+        <a routerLink="/expertise" id="nav-expertise-link" class="text-sm text-gray-400 hover:text-white transition-colors duration-300">Solutions</a>
+        <a routerLink="/works" id="nav-works-link" class="text-sm text-gray-400 hover:text-white transition-colors duration-300">Case Studies</a>
+        <a routerLink="/perspectives" id="nav-perspectives-link" class="text-sm text-gray-400 hover:text-white transition-colors duration-300">Insights</a>
+      </div>
+
+      <a routerLink="/login" id="nav-cta-link" class="inline-flex items-center justify-center px-6 py-3 rounded-full text-sm font-medium bg-white text-black hover:scale-105 hover:bg-gray-100 transition-all duration-300">
+        Get a Quote
+      </a>
+    </div>
+  </nav>
+
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-20 bg-[#050505]">
+    <div class="absolute inset-0 z-0 pointer-events-none select-none">
+      <div class="absolute top-0 left-0 w-full h-full opacity-60 mix-blend-screen">
+        <img src="https://framerusercontent.com/images/9zvwRJAavKKacVyhFCwHyXW1U.png?width=1536&height=1024" alt="Atmosphere" class="w-full h-full object-cover object-center opacity-80">
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#050505] z-10"></div>
+    </div>
+
+    <div class="absolute -left-[10%] top-[-10%] md:left-[-5%] md:top-[-15%] w-[50vw] md:w-[40vw] max-w-[800px] z-10 pointer-events-none mix-blend-hard-light opacity-80 animate-float-left">
+      <img src="https://framerusercontent.com/images/KNhiA5A2ykNYqNkj04Hk6BVg5A.png?width=1540&height=1320" alt="Hand Reaching" class="w-full h-auto object-contain">
+    </div>
+
+    <div class="absolute -right-[10%] bottom-[-10%] md:right-[-5%] md:bottom-[-5%] w-[45vw] md:w-[35vw] max-w-[700px] z-10 pointer-events-none mix-blend-hard-light opacity-80 animate-float-right">
+      <img src="https://framerusercontent.com/images/X89VFCABCEjjZ4oLGa3PjbOmsA.png?width=1542&height=1002" alt="Hand Receiving" class="w-full h-auto object-contain">
+    </div>
+
+    <div class="container mx-auto px-6 relative z-20 text-center flex flex-col items-center justify-center h-full">
+      <div id="hero-content-wrapper" class="max-w-4xl mx-auto">
+        <div class="reveal">
+          <h1 class="text-5xl md:text-7xl font-medium leading-[1.1] tracking-tight mb-6 text-[#ffe0e0] mix-blend-overlay font-serif"
+              style="text-shadow: 0 0 12px rgba(255,255,255,0.71);">
+            CraftFlow. <br />
+            <span class="italic font-light text-[#ffe0e0]">The digital agency.</span>
+          </h1>
+        </div>
+
+        <div class="reveal" style="transition-delay: 200ms;">
+          <p class="text-base md:text-lg text-[#ffe0e0]/90 max-w-lg mx-auto mb-16 font-light tracking-wide leading-relaxed mix-blend-overlay"
+             style="text-shadow: 0 0 12px rgba(255,255,255,0.71);">
+            We architect the systems that power modern businesses. A digital agency for enterprises ready to scale with purpose.
+          </p>
+        </div>
+
+        <div class="reveal flex flex-col items-center gap-6" style="transition-delay: 400ms;">
+          <div class="relative group cursor-pointer">
+            <div class="absolute inset-0 bg-[#FF4500]/20 blur-xl rounded-full opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
+            <div class="relative border border-white/20 bg-white/5 backdrop-blur-sm px-6 py-2 rounded-full flex items-center gap-3 text-xs md:text-sm text-white/80 uppercase tracking-widest hover:bg-white/10 transition-colors duration-300">
+              <span>Explore Our Work</span>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-4 text-[10px] md:text-xs text-white/40 uppercase tracking-widest mt-8 font-mono">
+            <span id="current-time">11:11 PM</span>
+            <span class="w-px h-3 bg-white/20"></span>
+            <span>NYC, USA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="expertise" class="py-24 relative overflow-hidden">
+    <div class="container mx-auto px-6 relative z-10">
+      <div class="reveal mb-10 text-center">
+        <span class="text-[#FF4500] text-sm font-medium tracking-widest uppercase mb-4 block">Solutions</span>
+        <h2 class="text-5xl md:text-7xl font-serif text-white">
+          Built to scale <br />
+          <span class="italic">with your ambition</span>
+        </h2>
+      </div>
+
+      <p class="reveal text-center text-gray-400 text-lg max-w-2xl mx-auto mb-16 leading-relaxed">
+        End-to-end digital infrastructure engineered for performance, reliability, and growth.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div class="reveal group">
+          <div class="bg-[#111] border border-white/10 rounded-3xl p-8 h-full hover:border-[#FF4500]/50 transition-all duration-500 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-40 h-40 bg-[#FF4500]/5 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-700"></div>
+            <div class="relative z-10">
+              <div class="w-14 h-14 rounded-2xl bg-[#FF4500]/10 flex items-center justify-center mb-6 group-hover:rotate-6 transition-transform duration-500">
+                <iconify-icon icon="lucide:layers" class="text-[#FF4500] text-2xl"></iconify-icon>
+              </div>
+              <h3 class="text-2xl text-white mb-3 font-serif">Custom Software</h3>
+              <p class="text-gray-400 text-base leading-relaxed mb-6">
+                Purpose-built applications designed around your exact business logic. No compromises. No workarounds.
+              </p>
+              <ul class="space-y-2">
+                <li class="flex items-center gap-2 text-sm text-gray-500">
+                  <iconify-icon icon="lucide:check" class="text-[#FF4500] text-xs"></iconify-icon>
+                  <span>ERP & CRM Systems</span>
+                </li>
+                <li class="flex items-center gap-2 text-sm text-gray-500">
+                  <iconify-icon icon="lucide:check" class="text-[#FF4500] text-xs"></iconify-icon>
+                  <span>Workflow Automation</span>
+                </li>
+                <li class="flex items-center gap-2 text-sm text-gray-500">
+                  <iconify-icon icon="lucide:check" class="text-[#FF4500] text-xs"></iconify-icon>
+                  <span>API Integrations</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal group" style="transition-delay: 100ms;">
+          <div class="bg-[#111] border border-white/10 rounded-3xl p-8 h-full hover:border-[#FF4500]/50 transition-all duration-500 relative overflow-hidden">
+            <div class="absolute bottom-0 left-0 w-40 h-40 bg-[#FF4500]/5 rounded-full translate-y-1/2 -translate-x-1/2 group-hover:scale-150 transition-transform duration-700"></div>
+            <div class="relative z-10">
+              <div class="w-14 h-14 rounded-2xl bg-[#FF4500]/10 flex items-center justify-center mb-6 group-hover:rotate-6 transition-transform duration-500">
+                <iconify-icon icon="lucide:database" class="text-[#FF4500] text-2xl"></iconify-icon>
+              </div>
+              <h3 class="text-2xl text-white mb-3 font-serif">Data & Analytics</h3>
+              <p class="text-gray-400 text-base leading-relaxed mb-6">
+                Transform raw data into strategic advantage with real-time dashboards and predictive intelligence.
+              </p>
+              <ul class="space-y-2">
+                <li class="flex items-center gap-2 text-sm text-gray-500">
+                  <iconify-icon icon="lucide:check" class="text-[#FF4500] text-xs"></iconify-icon>
+                  <span>Real-Time Dashboards</span>
+                </li>
+                <li class="flex items-center gap-2 text-sm text-gray-500">
+                  <iconify-icon icon="lucide:check" class="text-[#FF4500] text-xs"></iconify-icon>
+                  <span>Predictive Analytics</span>
+                </li>
+                <li class="flex items-center gap-2 text-sm text-gray-500">
+                  <iconify-icon icon="lucide:check" class="text-[#FF4500] text-xs"></iconify-icon>
+                  <span>Data Pipeline Design</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal group" style="transition-delay: 200ms;">
+          <div class="bg-[#111] border border-white/10 rounded-3xl p-8 h-full hover:border-[#FF4500]/50 transition-all duration-500 relative overflow-hidden">
+            <div class="absolute top-1/2 right-0 w-32 h-32 bg-[#FF4500]/5 rounded-full translate-x-1/2 group-hover:scale-150 transition-transform duration-700"></div>
+            <div class="relative z-10">
+              <div class="w-14 h-14 rounded-2xl bg-[#FF4500]/10 flex items-center justify-center mb-6 group-hover:rotate-6 transition-transform duration-500">
+                <iconify-icon icon="lucide:shield-check" class="text-[#FF4500] text-2xl"></iconify-icon>
+              </div>
+              <h3 class="text-2xl text-white mb-3 font-serif">Cloud & DevOps</h3>
+              <p class="text-gray-400 text-base leading-relaxed mb-6">
+                Scalable, secure infrastructure that grows with you. Deploy with confidence, iterate with speed.
+              </p>
+              <ul class="space-y-2">
+                <li class="flex items-center gap-2 text-sm text-gray-500">
+                  <iconify-icon icon="lucide:check" class="text-[#FF4500] text-xs"></iconify-icon>
+                  <span>Cloud Architecture</span>
+                </li>
+                <li class="flex items-center gap-2 text-sm text-gray-500">
+                  <iconify-icon icon="lucide:check" class="text-[#FF4500] text-xs"></iconify-icon>
+                  <span>CI/CD Pipelines</span>
+                </li>
+                <li class="flex items-center gap-2 text-sm text-gray-500">
+                  <iconify-icon icon="lucide:check" class="text-[#FF4500] text-xs"></iconify-icon>
+                  <span>Security & Compliance</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal mt-16 text-center">
+        <a routerLink="/expertise" class="inline-flex items-center gap-3 text-white/70 hover:text-white text-sm font-medium tracking-wider uppercase transition-colors duration-300 group">
+          <span>Explore All Solutions</span>
+          <iconify-icon icon="lucide:arrow-right" class="group-hover:translate-x-1 transition-transform duration-300"></iconify-icon>
+        </a>
+      </div>
+
+      <div class="mt-32 grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
+        <div class="reveal font-bold text-xl tracking-widest">MICROSOFT</div>
+        <div class="reveal font-bold text-xl tracking-widest" style="transition-delay: 100ms;">SALESFORCE</div>
+        <div class="reveal font-bold text-xl tracking-widest" style="transition-delay: 200ms;">ORACLE</div>
+        <div class="reveal font-bold text-xl tracking-widest" style="transition-delay: 300ms;">SAP</div>
+      </div>
+    </div>
+
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] opacity-5 pointer-events-none"
+         style="background: radial-gradient(circle, #FF4500 0%, transparent 70%);"></div>
+  </section>
+
+  <section id="works" class="py-24 relative overflow-hidden">
+    <div class="container mx-auto px-6 relative z-10">
+      <div class="reveal mb-10 text-center">
+        <span class="text-[#FF4500] text-sm font-medium tracking-widest uppercase mb-4 block">Case Studies</span>
+        <h2 class="text-5xl md:text-7xl font-serif text-white">
+          Proven results that <br />
+          <span class="italic">speak for themselves</span>
+        </h2>
+      </div>
+
+      <p class="reveal text-center text-gray-400 text-lg max-w-2xl mx-auto mb-16 leading-relaxed">
+        Real transformations. Measurable impact. Explore how we've helped businesses scale with purpose.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div class="parallax-card-down">
+          <div class="reveal bg-[#FF4500] border-2 border-[#FF4500] rounded-3xl p-8 md:p-10 min-h-[480px] flex flex-col justify-between shadow-2xl hover:shadow-[0_20px_50px_rgba(255,69,0,0.3)] transition-all duration-500 group cursor-pointer relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-black/10 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-700"></div>
+            <div class="relative z-10 flex justify-between items-start">
+              <div class="w-12 h-12 rounded-full bg-black/10 flex items-center justify-center group-hover:rotate-45 transition-transform duration-500">
+                <iconify-icon icon="lucide:factory" class="text-black text-2xl"></iconify-icon>
+              </div>
+              <span class="text-black font-medium text-sm border-2 border-black/20 px-3 py-1 rounded-full">01</span>
+            </div>
+            <div class="relative z-10">
+              <span class="text-black/60 text-xs font-medium tracking-widest uppercase">Manufacturing</span>
+              <h3 class="text-3xl md:text-4xl text-black mb-3 leading-tight tracking-tight font-serif mt-2">
+                Global ERP <br />Transformation
+              </h3>
+              <p class="text-black/70 text-base leading-snug mb-6">
+                Unified 12 regional offices onto a single platform, eliminating silos and reducing operational costs by 40%.
+              </p>
+              <div class="grid grid-cols-3 gap-4">
+                <div>
+                  <span class="text-black text-2xl font-bold">40%</span>
+                  <span class="text-black/60 text-xs block">Cost Reduction</span>
+                </div>
+                <div>
+                  <span class="text-black text-2xl font-bold">3x</span>
+                  <span class="text-black/60 text-xs block">Faster Reporting</span>
+                </div>
+                <div>
+                  <span class="text-black text-2xl font-bold">12</span>
+                  <span class="text-black/60 text-xs block">Offices Unified</span>
+                </div>
+              </div>
+            </div>
+            <div class="w-full h-px bg-black/10 mt-6"></div>
+          </div>
+        </div>
+
+        <div class="parallax-card-up md:mt-24">
+          <div class="reveal bg-[#111] border-2 border-white/[0.15] rounded-3xl p-8 md:p-10 min-h-[480px] flex flex-col justify-between shadow-2xl group cursor-pointer hover:border-[#FF4500] transition-all duration-500 relative overflow-hidden" style="transition-delay: 150ms;">
+            <div class="absolute bottom-0 left-0 w-64 h-64 bg-[#FF4500]/5 rounded-full translate-y-1/2 -translate-x-1/2 group-hover:scale-150 transition-transform duration-700"></div>
+            <div class="relative z-10 flex justify-between items-start">
+              <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                <iconify-icon icon="lucide:heart-handshake" class="text-white text-2xl"></iconify-icon>
+              </div>
+              <span class="text-white/50 font-medium text-sm border-2 border-white/10 px-3 py-1 rounded-full">02</span>
+            </div>
+            <div class="relative z-10">
+              <span class="text-white/40 text-xs font-medium tracking-widest uppercase">Healthcare</span>
+              <h3 class="text-3xl md:text-4xl text-white mb-3 leading-tight tracking-tight font-serif mt-2">
+                Patient Experience <br />Platform
+              </h3>
+              <p class="text-gray-400 text-base leading-snug mb-6">
+                Built a HIPAA-compliant CRM serving 500K+ patients with real-time appointment scheduling and personalized care plans.
+              </p>
+              <div class="grid grid-cols-3 gap-4">
+                <div>
+                  <span class="text-white text-2xl font-bold">500K+</span>
+                  <span class="text-white/40 text-xs block">Patients Served</span>
+                </div>
+                <div>
+                  <span class="text-white text-2xl font-bold">60%</span>
+                  <span class="text-white/40 text-xs block">No-Show Reduction</span>
+                </div>
+                <div>
+                  <span class="text-white text-2xl font-bold">4.9</span>
+                  <span class="text-white/40 text-xs block">App Store Rating</span>
+                </div>
+              </div>
+            </div>
+            <div class="w-full h-px bg-white/10 mt-6"></div>
+          </div>
+        </div>
+
+        <div class="parallax-card-down md:-mt-24">
+          <div class="reveal bg-[#111] border-2 border-white/[0.15] rounded-3xl p-8 md:p-10 min-h-[480px] flex flex-col justify-between shadow-2xl group cursor-pointer hover:border-[#FF4500] transition-all duration-500 relative overflow-hidden" style="transition-delay: 300ms;">
+            <div class="absolute top-1/2 right-0 w-48 h-48 bg-[#FF4500]/5 rounded-full translate-x-1/2 group-hover:scale-150 transition-transform duration-700"></div>
+            <div class="relative z-10 flex justify-between items-start">
+              <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                <iconify-icon icon="lucide:line-chart" class="text-white text-2xl"></iconify-icon>
+              </div>
+              <span class="text-white/50 font-medium text-sm border-2 border-white/10 px-3 py-1 rounded-full">03</span>
+            </div>
+            <div class="relative z-10">
+              <span class="text-white/40 text-xs font-medium tracking-widest uppercase">Fintech</span>
+              <h3 class="text-3xl md:text-4xl text-white mb-3 leading-tight tracking-tight font-serif mt-2">
+                Real-Time <br />Analytics Engine
+              </h3>
+              <p class="text-gray-400 text-base leading-snug mb-6">
+                Processing 2M+ transactions daily with sub-second latency, enabling instant fraud detection and risk assessment.
+              </p>
+              <div class="grid grid-cols-3 gap-4">
+                <div>
+                  <span class="text-white text-2xl font-bold">2M+</span>
+                  <span class="text-white/40 text-xs block">Daily Transactions</span>
+                </div>
+                <div>
+                  <span class="text-white text-2xl font-bold">&lt;1s</span>
+                  <span class="text-white/40 text-xs block">Detection Time</span>
+                </div>
+                <div>
+                  <span class="text-white text-2xl font-bold">99.9%</span>
+                  <span class="text-white/40 text-xs block">Uptime SLA</span>
+                </div>
+              </div>
+            </div>
+            <div class="w-full h-px bg-white/10 mt-6"></div>
+          </div>
+        </div>
+
+        <div class="parallax-card-up">
+          <div class="reveal bg-[#FF4500] border-2 border-[#FF4500] rounded-3xl p-8 md:p-10 min-h-[480px] flex flex-col justify-between shadow-2xl hover:shadow-[0_20px_50px_rgba(255,69,0,0.3)] transition-all duration-500 group cursor-pointer relative overflow-hidden" style="transition-delay: 450ms;">
+            <div class="absolute -bottom-8 -right-8 w-48 h-48 bg-black/10 rounded-full group-hover:scale-150 transition-transform duration-700"></div>
+            <div class="relative z-10 flex justify-between items-start">
+              <div class="w-12 h-12 rounded-full bg-black/10 flex items-center justify-center group-hover:rotate-45 transition-transform duration-500">
+                <iconify-icon icon="lucide:warehouse" class="text-black text-2xl"></iconify-icon>
+              </div>
+              <span class="text-black font-medium text-sm border-2 border-black/20 px-3 py-1 rounded-full">04</span>
+            </div>
+            <div class="relative z-10">
+              <span class="text-black/60 text-xs font-medium tracking-widest uppercase">E-Commerce</span>
+              <h3 class="text-3xl md:text-4xl text-black mb-3 leading-tight tracking-tight font-serif mt-2">
+                Smart Inventory <br />Orchestration
+              </h3>
+              <p class="text-black/70 text-base leading-snug mb-6">
+                Automated warehouse operations across 8 fulfillment centers, cutting shipping times in half and reducing stockouts.
+              </p>
+              <div class="grid grid-cols-3 gap-4">
+                <div>
+                  <span class="text-black text-2xl font-bold">50%</span>
+                  <span class="text-black/60 text-xs block">Faster Shipping</span>
+                </div>
+                <div>
+                  <span class="text-black text-2xl font-bold">8</span>
+                  <span class="text-black/60 text-xs block">Centers Automated</span>
+                </div>
+                <div>
+                  <span class="text-black text-2xl font-bold">AED 7.7M</span>
+                  <span class="text-black/60 text-xs block">Annual Savings</span>
+                </div>
+              </div>
+            </div>
+            <div class="w-full h-px bg-black/10 mt-6"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal mt-16 text-center">
+        <a routerLink="/works" class="inline-flex items-center gap-3 text-white/70 hover:text-white text-sm font-medium tracking-wider uppercase transition-colors duration-300 group">
+          <span>View All Case Studies</span>
+          <iconify-icon icon="lucide:arrow-right" class="group-hover:translate-x-1 transition-transform duration-300"></iconify-icon>
+        </a>
+      </div>
+    </div>
+
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] opacity-10 pointer-events-none"
+         style="background-image: radial-gradient(circle, #333 1px, transparent 1px); background-size: 40px 40px;">
+    </div>
+  </section>
+
+  <section id="insights" class="py-24 relative overflow-hidden">
+    <div class="container mx-auto px-6 relative z-10">
+      <div class="reveal mb-10 text-center">
+        <span class="text-[#FF4500] text-sm font-medium tracking-widest uppercase mb-4 block">Insights</span>
+        <h2 class="text-5xl md:text-7xl font-serif text-white">
+          Thought leadership <br />
+          <span class="italic">that drives results</span>
+        </h2>
+      </div>
+
+      <p class="reveal text-center text-gray-400 text-lg max-w-2xl mx-auto mb-16 leading-relaxed">
+        Deep dives into digital strategy, technology trends, and lessons learned from building at scale.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <a routerLink="/perspectives" class="reveal group">
+          <div class="bg-[#111] border border-white/10 rounded-3xl overflow-hidden hover:border-[#FF4500]/50 transition-all duration-500 h-full flex flex-col">
+            <div class="aspect-[16/9] bg-gradient-to-br from-[#FF4500]/20 to-[#FF4500]/5 relative overflow-hidden">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <iconify-icon icon="lucide:brain" class="text-[#FF4500] text-6xl opacity-50 group-hover:scale-110 transition-transform duration-500"></iconify-icon>
+              </div>
+              <div class="absolute top-4 left-4">
+                <span class="bg-[#FF4500] text-black text-xs font-medium px-3 py-1 rounded-full">Featured</span>
+              </div>
+            </div>
+            <div class="p-8 flex flex-col flex-1">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="text-[#FF4500] text-xs font-medium tracking-wider uppercase">Strategy</span>
+                <span class="w-1 h-1 rounded-full bg-white/20"></span>
+                <span class="text-gray-500 text-xs">8 min read</span>
+              </div>
+              <h3 class="text-xl text-white mb-3 font-serif group-hover:text-[#FF4500] transition-colors duration-300">
+                Why 70% of Digital Transformations Fail — And How to Be the 30%
+              </h3>
+              <p class="text-gray-400 text-sm leading-relaxed flex-1">
+                The gap between vision and execution is where most initiatives die. Here's our framework for getting it right.
+              </p>
+              <div class="flex items-center gap-2 mt-6 text-sm text-white/50 group-hover:text-[#FF4500] transition-colors duration-300">
+                <span>Read More</span>
+                <iconify-icon icon="lucide:arrow-right" class="text-xs group-hover:translate-x-1 transition-transform duration-300"></iconify-icon>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a routerLink="/perspectives" class="reveal group" style="transition-delay: 100ms;">
+          <div class="bg-[#111] border border-white/10 rounded-3xl overflow-hidden hover:border-[#FF4500]/50 transition-all duration-500 h-full flex flex-col">
+            <div class="aspect-[16/9] bg-gradient-to-br from-[#FF4500]/20 to-[#FF4500]/5 relative overflow-hidden">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <iconify-icon icon="lucide:trending-up" class="text-[#FF4500] text-6xl opacity-50 group-hover:scale-110 transition-transform duration-500"></iconify-icon>
+              </div>
+            </div>
+            <div class="p-8 flex flex-col flex-1">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="text-[#FF4500] text-xs font-medium tracking-wider uppercase">Engineering</span>
+                <span class="w-1 h-1 rounded-full bg-white/20"></span>
+                <span class="text-gray-500 text-xs">12 min read</span>
+              </div>
+              <h3 class="text-xl text-white mb-3 font-serif group-hover:text-[#FF4500] transition-colors duration-300">
+                Building Event-Driven Architecture That Actually Scales
+              </h3>
+              <p class="text-gray-400 text-sm leading-relaxed flex-1">
+                Lessons from processing 10M+ events daily. The patterns that work and the pitfalls to avoid.
+              </p>
+              <div class="flex items-center gap-2 mt-6 text-sm text-white/50 group-hover:text-[#FF4500] transition-colors duration-300">
+                <span>Read More</span>
+                <iconify-icon icon="lucide:arrow-right" class="text-xs group-hover:translate-x-1 transition-transform duration-300"></iconify-icon>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a routerLink="/perspectives" class="reveal group" style="transition-delay: 200ms;">
+          <div class="bg-[#111] border border-white/10 rounded-3xl overflow-hidden hover:border-[#FF4500]/50 transition-all duration-500 h-full flex flex-col">
+            <div class="aspect-[16/9] bg-gradient-to-br from-[#FF4500]/20 to-[#FF4500]/5 relative overflow-hidden">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <iconify-icon icon="lucide:lock" class="text-[#FF4500] text-6xl opacity-50 group-hover:scale-110 transition-transform duration-500"></iconify-icon>
+              </div>
+            </div>
+            <div class="p-8 flex flex-col flex-1">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="text-[#FF4500] text-xs font-medium tracking-wider uppercase">Security</span>
+                <span class="w-1 h-1 rounded-full bg-white/20"></span>
+                <span class="text-gray-500 text-xs">6 min read</span>
+              </div>
+              <h3 class="text-xl text-white mb-3 font-serif group-hover:text-[#FF4500] transition-colors duration-300">
+                Zero Trust in Practice: A Blueprint for Modern Enterprises
+              </h3>
+              <p class="text-gray-400 text-sm leading-relaxed flex-1">
+                Moving beyond theory to implementation. How we helped a Fortune 500 achieve full zero trust in 90 days.
+              </p>
+              <div class="flex items-center gap-2 mt-6 text-sm text-white/50 group-hover:text-[#FF4500] transition-colors duration-300">
+                <span>Read More</span>
+                <iconify-icon icon="lucide:arrow-right" class="text-xs group-hover:translate-x-1 transition-transform duration-300"></iconify-icon>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="reveal mt-16 text-center">
+        <a routerLink="/perspectives" class="inline-flex items-center gap-3 text-white/70 hover:text-white text-sm font-medium tracking-wider uppercase transition-colors duration-300 group">
+          <span>View All Insights</span>
+          <iconify-icon icon="lucide:arrow-right" class="group-hover:translate-x-1 transition-transform duration-300"></iconify-icon>
+        </a>
+      </div>
+    </div>
+
+    <div class="absolute bottom-0 right-0 w-[600px] h-[600px] opacity-5 pointer-events-none"
+         style="background: radial-gradient(circle, #FF4500 0%, transparent 70%);"></div>
+  </section>
+
+  <footer class="py-20 border-t border-white/5 bg-[#050505] relative overflow-hidden">
+    <div class="container mx-auto px-6 relative z-10">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-12">
+        <div class="w-full md:w-auto">
+          <h2 class="text-[10vw] leading-[0.8] tracking-tighter text-white/10 font-bold select-none pointer-events-none">
+            CRAFTFLOW.
+          </h2>
+        </div>
+        <div class="flex flex-col gap-8 text-right">
+          <div class="flex flex-col gap-4 text-gray-400">
+            <a href="#" id="footer-ig-link" class="hover:text-white transition-colors">Instagram</a>
+            <a href="#" id="footer-tw-link" class="hover:text-white transition-colors">Twitter</a>
+            <a href="#" id="footer-li-link" class="hover:text-white transition-colors">LinkedIn</a>
+          </div>
+          <p class="text-sm text-gray-400">&copy; 2026 CraftFlow. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>

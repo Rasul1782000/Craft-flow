@@ -1,0 +1,108 @@
+<app-dashboard-shell [title]="'Revenue'" [greeting]="'Monitor your earnings and projections.'">
+  <!-- Metric cards -->
+  <div class="kpis">
+    <article class="kpi glass" *ngFor="let m of metrics">
+      <p class="kpi__label">{{ m.label }}</p>
+      <p class="kpi__value">{{ m.value }}</p>
+      <p class="kpi__delta" [class.kpi__delta--up]="m.up" [class.kpi__delta--down]="!m.up">{{ m.delta }}</p>
+    </article>
+  </div>
+
+  <!-- Revenue over time chart -->
+  <article class="card glass">
+    <div class="card__head">
+      <div>
+        <h2 class="card__title">Revenue over time</h2>
+        <p class="card__sub">Monthly gross revenue, this fiscal year</p>
+      </div>
+      <div class="legend">
+        <span class="legend__item"><i class="legend__swatch legend__swatch--amber"></i>This year</span>
+        <span class="legend__item"><i class="legend__swatch legend__swatch--muted"></i>Last year</span>
+      </div>
+    </div>
+    <div class="chart-wrap">
+      <svg class="chart" viewBox="0 0 1000 300" preserveAspectRatio="none" role="img" aria-label="Revenue area chart">
+        <defs>
+          <linearGradient id="revFillR" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#ef8f2a" stop-opacity="0.32"></stop>
+            <stop offset="100%" stop-color="#ef8f2a" stop-opacity="0"></stop>
+          </linearGradient>
+        </defs>
+        <line class="grid" x1="30" y1="80" x2="970" y2="80"></line>
+        <line class="grid" x1="30" y1="150" x2="970" y2="150"></line>
+        <line class="grid" x1="30" y1="220" x2="970" y2="220"></line>
+        <path [attr.d]="revenueLastPath" class="chart__last" fill="none"></path>
+        <path [attr.d]="revenueAreaPath" fill="url(#revFillR)"></path>
+        <path [attr.d]="revenueLinePath" class="chart__line" fill="none"></path>
+      </svg>
+      <span class="chart__ring" [style.left.%]="midPct.x" [style.top.%]="midPct.y"></span>
+      <span class="chart__end" [style.left.%]="endPct.x" [style.top.%]="endPct.y"></span>
+    </div>
+    <div class="chart__months">
+      <span *ngFor="let m of months" class="chart__month">{{ m }}</span>
+    </div>
+  </article>
+
+  <!-- Revenue by Plan + Projections -->
+  <div class="row row--charts">
+    <article class="card glass">
+      <div class="card__head">
+        <div>
+          <h2 class="card__title">Revenue by Plan</h2>
+          <p class="card__sub">Current monthly breakdown across all tiers</p>
+        </div>
+      </div>
+      <div class="space-y-5">
+        <div *ngFor="let p of plans" class="flex items-center gap-4">
+          <span class="w-2.5 h-2.5 rounded-full" [style.background]="p.color"></span>
+          <span class="text-sm text-[#cbd5e1] w-24">{{ p.name }}</span>
+          <span class="text-sm font-mono text-white flex-1">{{ p.revenue }}</span>
+          <span class="text-xs text-[#94a3b8] font-mono">{{ p.subscribers }} subs</span>
+          <div class="w-24 h-2 rounded-full bg-white/[0.06] overflow-hidden">
+            <span class="block h-full rounded-full" [style.width.%]="p.subscribers / 3.64" [style.background]="p.color"></span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="card glass">
+      <div class="card__head">
+        <div>
+          <h2 class="card__title">Projections</h2>
+          <p class="card__sub">Estimated revenue next 3 months</p>
+        </div>
+      </div>
+      <div class="space-y-4">
+        <div *ngFor="let p of projections" class="flex items-center justify-between py-2 border-b border-white/[0.04] last:border-0">
+          <span class="text-[#94a3b8] text-sm">{{ p.month }}</span>
+          <span class="text-white font-mono font-semibold">{{ p.projected }}</span>
+          <span class="text-green-400 text-xs font-mono">{{ p.growth }}</span>
+        </div>
+      </div>
+      <div class="mt-6 pt-4 border-t border-white/[0.06]">
+        <div class="flex items-center justify-between text-sm">
+          <span class="text-[#94a3b8]">Q3 target</span>
+          <span class="text-white font-mono font-semibold">AED 363K</span>
+          <span class="text-[#ff4500] text-xs font-mono">+18.5%</span>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <!-- Growth metrics -->
+  <div class="row row--triple">
+    <article class="card glass" *ngFor="let g of growthData">
+      <div class="card__head">
+        <p class="card__sub">{{ g.label }}</p>
+      </div>
+      <p class="text-2xl font-bold font-mono text-white">{{ g.value }}</p>
+      <svg class="mt-3" viewBox="0 0 60 24" width="60" height="24" fill="none" stroke="#22c55e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="4 20 16 10 28 14 40 6 56 10"></polyline>
+      </svg>
+    </article>
+  </div>
+
+  <div class="border-t border-white/[0.06] pt-8 text-center">
+    <p class="text-xs text-[#94a3b8]">Total revenue this fiscal year &mdash; <span class="text-[#ff4500] font-mono">AED 506,160</span></p>
+  </div>
+</app-dashboard-shell>

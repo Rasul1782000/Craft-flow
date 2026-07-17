@@ -1,0 +1,74 @@
+<app-dashboard-shell [title]="'Properties'" [greeting]="'Browse all listed properties.'">
+  <!-- Search -->
+  <div class="mb-6">
+    <div class="relative max-w-md">
+      <svg class="absolute left-3 top-1/2 -translate-y-1/2 text-[#64748b]" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="11" cy="11" r="7"></circle>
+        <line x1="21" y1="21" x2="16.5" y2="16.5"></line>
+      </svg>
+      <input
+        type="text"
+        [(ngModel)]="searchTerm"
+        placeholder="Search by name, city, or state..."
+        class="w-full bg-white/[0.05] border border-white/[0.08] rounded-xl pl-10 pr-4 py-2.5 text-sm text-[#cbd5e1] outline-none focus:border-[#ff4500]/50 transition-colors"
+      >
+    </div>
+  </div>
+
+  <!-- Summary -->
+  <div class="flex items-center gap-6 mb-6">
+    <span class="text-sm text-[#94a3b8]">{{ filteredProperties.length }} properties</span>
+    <span class="flex items-center gap-1.5 text-xs">
+      <span class="w-2 h-2 rounded-full bg-green-400"></span>
+      <span class="text-[#94a3b8]">{{ filteredProperties.length - properties.filter(p => p.status === 'for_rent').length }} for sale</span>
+    </span>
+    <span class="flex items-center gap-1.5 text-xs">
+      <span class="w-2 h-2 rounded-full bg-blue-400"></span>
+      <span class="text-[#94a3b8]">{{ properties.filter(p => p.status === 'for_rent').length }} for rent</span>
+    </span>
+  </div>
+
+  <!-- Grid -->
+  <div class="grid grid-cols-2 gap-4">
+    <div *ngFor="let p of filteredProperties"
+         class="bg-white/[0.03] border border-white/[0.06] rounded-xl p-5 hover:border-[#ff4500]/20 transition-colors cursor-pointer">
+      <div class="flex items-start justify-between mb-3">
+        <div>
+          <div class="flex items-center gap-2 mb-1">
+            <h3 class="text-sm font-semibold text-white">{{ p.title }}</h3>
+            <span *ngIf="p.featured" class="text-[9px] bg-[#ff4500]/10 text-[#ff4500] px-1.5 py-0.5 rounded-full font-medium">Featured</span>
+          </div>
+          <p class="text-xs text-[#64748b]">{{ p.address }}, {{ p.city }}, {{ p.state }}</p>
+        </div>
+        <span class="text-[10px] px-2 py-0.5 rounded-full font-medium shrink-0 ml-2"
+              [class.bg-green-400/10]="p.status === 'for_sale'"
+              [class.text-green-400]="p.status === 'for_sale'"
+              [class.bg-blue-400/10]="p.status === 'for_rent'"
+              [class.text-blue-400]="p.status === 'for_rent'"
+              [class.bg-amber-400/10]="p.status === 'sold'"
+              [class.text-amber-400]="p.status === 'sold'">
+          {{ p.status === 'for_sale' ? 'For Sale' : p.status === 'for_rent' ? 'For Rent' : 'Sold' }}
+        </span>
+      </div>
+
+      <div class="flex items-center gap-3 text-xs text-[#94a3b8] mb-4">
+        <span>{{ p.bedrooms }} bed</span>
+        <span class="text-[#64748b]">&middot;</span>
+        <span>{{ p.bathrooms }} bath</span>
+        <span class="text-[#64748b]">&middot;</span>
+        <span>{{ p.sqft | number }} sqft</span>
+        <span class="text-[#64748b]">&middot;</span>
+        <span>{{ p.type }}</span>
+      </div>
+
+      <div class="flex items-center justify-between pt-3 border-t border-white/[0.04]">
+        <p class="text-lg font-bold text-[#ff4500] font-mono">{{ formatPrice(p.price) }}</p>
+        <span class="text-[11px] text-[#64748b]">{{ p.agent }}</span>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="filteredProperties.length === 0" class="text-center py-20">
+    <p class="text-[#94a3b8]">No properties match your search.</p>
+  </div>
+</app-dashboard-shell>

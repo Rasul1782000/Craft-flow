@@ -1,0 +1,414 @@
+<div class="dash">
+  <div class="aurora" aria-hidden="true"></div>
+  <div class="aurora-bloom" aria-hidden="true"></div>
+
+  <div class="dash__layout">
+    <!-- Left icon rail -->
+    <aside class="rail">
+      <div class="rail__top">
+        <div class="rail__logo" aria-label="CraftFlow">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M16.9 16.9l2.1 2.1M19.1 4.9l-2.1 2.1M7.1 16.9l-2.1 2.1"></path>
+          </svg>
+        </div>
+
+        <nav class="rail__nav">
+            <button
+            *ngFor="let item of navItems"
+            class="rail__btn"
+            [class.rail__btn--active]="activeNav === item.id"
+            (click)="setNav(item)"
+            [attr.aria-label]="item.label"
+            [title]="item.label"
+          >
+            <span class="rail__btn-wrap">
+              <svg *ngIf="item.icon === 'dashboard'" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="7" height="9" rx="1.5"></rect>
+                <rect x="14" y="3" width="7" height="5" rx="1.5"></rect>
+                <rect x="14" y="12" width="7" height="9" rx="1.5"></rect>
+                <rect x="3" y="16" width="7" height="5" rx="1.5"></rect>
+              </svg>
+              <svg *ngIf="item.icon === 'wallet'" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2"></path>
+                <path d="M3 7v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2H5"></path>
+                <circle cx="16" cy="13" r="1.4" fill="currentColor" stroke="none"></circle>
+              </svg>
+              <svg *ngIf="item.icon === 'users'" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="9" cy="8" r="3.2"></circle>
+                <path d="M3.5 19a5.5 5.5 0 0 1 11 0"></path>
+                <path d="M16 5.2a3.2 3.2 0 0 1 0 6.1"></path>
+                <path d="M17.5 13.4A5.5 5.5 0 0 1 20.5 19"></path>
+              </svg>
+              <svg *ngIf="item.icon === 'receipt'" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 3v18l2-1.5L9 21l2-1.5L13 21l2-1.5L17 21l2-1.5V3l-2 1.5L15 3l-2 1.5L11 3 9 4.5 7 3z"></path>
+                <line x1="9" y1="8" x2="15" y2="8"></line>
+                <line x1="9" y1="12" x2="15" y2="12"></line>
+              </svg>
+              <svg *ngIf="item.icon === 'properties'" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 21V9l9-7 9 7v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"></path>
+                <path d="M9 21V13h6v8"></path>
+              </svg>
+              <svg *ngIf="item.icon === 'settings'" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="3"></circle>
+                <path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-2.7 1.1V22a2 2 0 1 1-4 0v-.1A1.6 1.6 0 0 0 7 20.4a1.6 1.6 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0-1.1-2.7H1a2 2 0 1 1 0-4h.1A1.6 1.6 0 0 0 2.6 7a1.6 1.6 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.6 1.6 0 0 0 1.8.3H7a1.6 1.6 0 0 0 1-1.5V1a2 2 0 1 1 4 0v.1a1.6 1.6 0 0 0 2.7 1.1 1.6 1.6 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0-.3 1.8V7a1.6 1.6 0 0 0 1.5 1H23a2 2 0 1 1 0 4h-.1a1.6 1.6 0 0 0-1.5 1z"></path>
+              </svg>
+
+              <span *ngIf="item.badge" class="rail__badge">{{ item.badge }}</span>
+            </span>
+          </button>
+        </nav>
+      </div>
+
+      <div class="rail__bottom">
+        <button class="rail__btn" [class.rail__btn--active]="activeNav === 'help'" aria-label="Help" title="Help" (click)="goHelp()">
+          <span class="rail__btn-wrap">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="9"></circle>
+              <path d="M9.2 9.4a2.8 2.8 0 0 1 5.4 1c0 1.9-2.8 2.3-2.8 4"></path>
+              <circle cx="12" cy="17" r="1" fill="currentColor" stroke="none"></circle>
+            </svg>
+            <span class="rail__badge">{{ helpBadge }}</span>
+          </span>
+        </button>
+        <button class="rail__avatar" aria-label="Account" (click)="logout()">{{ userInitials }}</button>
+      </div>
+    </aside>
+
+    <!-- Main column -->
+    <div class="main">
+      <header class="topbar glass">
+        <div class="topbar__left">
+          <h1 class="topbar__title">{{ pageTitle }}</h1>
+          <p class="topbar__greeting">{{ pageGreeting }}</p>
+        </div>
+
+        <div class="topbar__right">
+          <label class="search glass-soft">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="7"></circle>
+              <line x1="21" y1="21" x2="16.5" y2="16.5"></line>
+            </svg>
+            <input type="text" placeholder="Search" />
+          </label>
+
+          <button class="pill glass-soft" aria-label="Date range">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="var(--primary)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="5" width="18" height="16" rx="2"></rect>
+              <line x1="3" y1="9" x2="21" y2="9"></line>
+              <line x1="8" y1="3" x2="8" y2="6"></line>
+              <line x1="16" y1="3" x2="16" y2="6"></line>
+            </svg>
+            <span>Last 30 days</span>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+
+          <button class="icon-btn glass-soft" aria-label="Notifications">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.7 21a2 2 0 0 1-3.4 0"></path>
+            </svg>
+            <span class="icon-btn__dot"></span>
+          </button>
+
+          <button class="avatar-chip glass-soft" aria-label="Account">
+            <span class="avatar-chip__photo">{{ userInitials }}</span>
+            <span class="avatar-chip__meta">
+              <span class="avatar-chip__name">{{ userName }}</span>
+              <span class="avatar-chip__role">Admin</span>
+            </span>
+          </button>
+        </div>
+      </header>
+
+      <!-- KPI row 1: 1-4 -->
+      <section class="kpis">
+        <article class="kpi glass" *ngFor="let k of kpis; let i = index" [class.kpi--hidden]="i > 3">
+          <div class="kpi__head">
+            <span class="kpi__chip" [class.kpi__chip--down]="!k.up">
+              <svg *ngIf="k.icon === 'users'" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="8" r="3.2"></circle><path d="M3.5 19a5.5 5.5 0 0 1 11 0"></path></svg>
+              <svg *ngIf="k.icon === 'conversion'" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="6" y1="18" x2="18" y2="6"></line><circle cx="7" cy="7" r="2"></circle><circle cx="17" cy="17" r="2"></circle></svg>
+              <svg *ngIf="k.icon === 'cart'" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="20" r="1.4"></circle><circle cx="17" cy="20" r="1.4"></circle><path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h7.5a2 2 0 0 0 2-1.6L21 8H6.2"></path></svg>
+              <svg *ngIf="k.icon === 'uptime'" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+              <svg *ngIf="k.icon === 'bounce'" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="4 14 10 14 10 20"></polyline><polyline points="20 10 14 10 14 4"></polyline><line x1="14" y1="10" x2="21" y2="3"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+              <svg *ngIf="k.icon === 'views'" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+              <svg *ngIf="k.icon === 'newusers'" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><line x1="20" y1="8" x2="20" y2="14"></line><line x1="23" y1="11" x2="17" y2="11"></line></svg>
+              <svg *ngIf="k.icon === 'sessions'" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+            </span>
+            <span class="delta" [class.delta--down]="!k.up">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                <polyline [attr.points]="k.up ? '6 15 12 9 18 15' : '6 9 12 15 18 9'"></polyline>
+              </svg>
+              {{ k.delta }}
+            </span>
+          </div>
+          <p class="kpi__label">{{ k.label }}</p>
+          <p class="kpi__value">{{ k.value }}</p>
+          <svg class="kpi__spark" viewBox="0 0 100 40" preserveAspectRatio="none">
+            <defs>
+              <linearGradient [id]="'sf'+i" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" [attr.stop-color]="k.up ? '#ef8f2a' : '#fb7185'" stop-opacity="0.18"></stop>
+                <stop offset="100%" [attr.stop-color]="k.up ? '#ef8f2a' : '#fb7185'" stop-opacity="0"></stop>
+              </linearGradient>
+            </defs>
+            <path [attr.d]="k.sparkPath + ' L100,40 L0,40 Z'" [attr.fill]="'url(#sf'+i+')'" vector-effect="non-scaling-stroke"></path>
+            <path [attr.d]="k.sparkPath" fill="none" [class.spark--down]="!k.up" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"></path>
+          </svg>
+        </article>
+      </section>
+
+      <!-- KPI row 2: 5-8 -->
+      <section class="kpis">
+        <article class="kpi glass" *ngFor="let k of kpis; let i = index" [class.kpi--hidden]="i < 4">
+          <div class="kpi__head">
+            <span class="kpi__chip" [class.kpi__chip--down]="!k.up">
+              <svg *ngIf="k.icon === 'bounce'" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="4 14 10 14 10 20"></polyline><polyline points="20 10 14 10 14 4"></polyline><line x1="14" y1="10" x2="21" y2="3"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+              <svg *ngIf="k.icon === 'views'" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+              <svg *ngIf="k.icon === 'newusers'" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><line x1="20" y1="8" x2="20" y2="14"></line><line x1="23" y1="11" x2="17" y2="11"></line></svg>
+              <svg *ngIf="k.icon === 'sessions'" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+            </span>
+            <span class="delta" [class.delta--down]="!k.up">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                <polyline [attr.points]="k.up ? '6 15 12 9 18 15' : '6 9 12 15 18 9'"></polyline>
+              </svg>
+              {{ k.delta }}
+            </span>
+          </div>
+          <p class="kpi__label">{{ k.label }}</p>
+          <p class="kpi__value">{{ k.value }}</p>
+          <svg class="kpi__spark" viewBox="0 0 100 40" preserveAspectRatio="none">
+            <defs>
+              <linearGradient [id]="'sf'+i" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" [attr.stop-color]="k.up ? '#ef8f2a' : '#fb7185'" stop-opacity="0.18"></stop>
+                <stop offset="100%" [attr.stop-color]="k.up ? '#ef8f2a' : '#fb7185'" stop-opacity="0"></stop>
+              </linearGradient>
+            </defs>
+            <path [attr.d]="k.sparkPath + ' L100,40 L0,40 Z'" [attr.fill]="'url(#sf'+i+')'" vector-effect="non-scaling-stroke"></path>
+            <path [attr.d]="k.sparkPath" fill="none" [class.spark--down]="!k.up" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"></path>
+          </svg>
+        </article>
+      </section>
+
+      <!-- Charts row: Sessions + Traffic sources -->
+      <div class="row row--charts">
+        <article class="card glass">
+          <div class="card__head">
+            <div>
+              <h2 class="card__title">Sessions logged in</h2>
+              <p class="card__sub">Total authenticated sessions this period</p>
+            </div>
+          </div>
+          <div class="flex items-center justify-center py-10">
+            <div class="text-center">
+              <p class="text-5xl font-bold font-mono text-white">45,892</p>
+              <p class="text-sm text-[#94a3b8] mt-2">sessions</p>
+              <div class="flex items-center justify-center gap-2 mt-4">
+                <span class="inline-flex items-center gap-1 text-xs font-medium text-green-400 bg-green-400/10 px-3 py-1.5 rounded-full">
+                  <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 15 12 9 18 15"></polyline></svg>
+                  +9.2%
+                </span>
+                <span class="text-xs text-[#64748b]">vs last month</span>
+              </div>
+              <div class="mt-6 flex items-center justify-center gap-8 text-xs">
+                <div><span class="text-[#94a3b8]">Avg. duration</span><br><span class="text-white font-mono font-semibold">4m 32s</span></div>
+                <div><span class="text-[#94a3b8]">Bounce rate</span><br><span class="text-white font-mono font-semibold">32.1%</span></div>
+                <div><span class="text-[#94a3b8]">Peak day</span><br><span class="text-white font-mono font-semibold">Monday</span></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card glass">
+          <div class="card__head">
+            <div>
+              <h2 class="card__title">Traffic sources</h2>
+              <p class="card__sub">Where your visitors come from</p>
+            </div>
+          </div>
+          <div class="donut">
+            <svg viewBox="0 0 160 160" width="180" height="180" role="img" aria-label="Traffic sources donut">
+              <circle class="donut__track" cx="80" cy="80" r="54"></circle>
+              <circle *ngFor="let s of sources" class="donut__seg seg--{{ s.color }}" cx="80" cy="80" r="54" transform="rotate(-90 80 80)" [attr.stroke-dasharray]="s.dash + ' ' + (donutCirc - s.dash)" [attr.stroke-dashoffset]="s.offset"></circle>
+            </svg>
+            <div class="donut__center">
+              <span class="donut__total">{{ totalVisitors }}</span>
+              <span class="donut__caption">visitors</span>
+            </div>
+          </div>
+          <ul class="donut__legend">
+            <li *ngFor="let s of sources">
+              <span class="dot dot--{{ s.color }}"></span>
+              <span class="donut__label">{{ s.label }}</span>
+              <span class="donut__pct">{{ s.pct }}%</span>
+            </li>
+          </ul>
+        </article>
+      </div>
+
+      <!-- Triple row: Devices + Browsers + Top Pages -->
+      <div class="row row--triple">
+        <article class="card glass">
+          <div class="card__head">
+            <div>
+              <h2 class="card__title">Devices</h2>
+              <p class="card__sub">Breakdown by device type</p>
+            </div>
+          </div>
+          <ul class="bars-simple">
+            <li *ngFor="let d of devices">
+              <div class="bars-simple__top">
+                <span class="bars-simple__label">{{ d.label }}</span>
+                <span class="bars-simple__pct">{{ d.pct }}%</span>
+              </div>
+              <div class="bars-simple__track">
+                <span class="bars-simple__fill" [style.width.%]="d.pct" [style.background]="d.color"></span>
+              </div>
+            </li>
+          </ul>
+        </article>
+
+        <article class="card glass">
+          <div class="card__head">
+            <div>
+              <h2 class="card__title">Browsers</h2>
+              <p class="card__sub">Browser distribution</p>
+            </div>
+          </div>
+          <ul class="bars-simple">
+            <li *ngFor="let b of browsers">
+              <div class="bars-simple__top">
+                <span class="bars-simple__label">{{ b.label }}</span>
+                <span class="bars-simple__pct">{{ b.pct }}%</span>
+              </div>
+              <div class="bars-simple__track">
+                <span class="bars-simple__fill" [style.width.%]="b.pct" [style.background]="b.color"></span>
+              </div>
+            </li>
+          </ul>
+        </article>
+
+        <article class="card glass">
+          <div class="card__head">
+            <div>
+              <h2 class="card__title">Top pages</h2>
+              <p class="card__sub">Most visited routes</p>
+            </div>
+          </div>
+          <ul class="top-pages">
+            <li *ngFor="let p of topPages" class="top-pages__row">
+              <span class="top-pages__path">{{ p.path }}</span>
+              <span class="top-pages__views">{{ p.views }}</span>
+              <svg *ngIf="p.trend === 'up'" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="18 15 12 9 6 15"></polyline></svg>
+              <svg *ngIf="p.trend === 'down'" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#fb7185" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              <svg *ngIf="p.trend === 'stable'" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#64748b" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            </li>
+          </ul>
+        </article>
+      </div>
+
+      <!-- Bottom row: Activity + System Health + Insights -->
+      <div class="row row--bottom">
+        <article class="card glass">
+          <div class="card__head">
+            <div>
+              <h2 class="card__title">Activity log</h2>
+              <p class="card__sub">Latest system events and updates</p>
+            </div>
+            <a class="link" href="#">View all &rarr;</a>
+          </div>
+          <div class="table-wrap">
+            <table class="activity">
+              <thead>
+                <tr>
+                  <th>User</th>
+                  <th>Activity</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                  <th class="activity__amount">Amount</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let a of activities">
+                  <td>
+                    <div class="activity__cust">
+                      <span class="activity__avatar" [style.background]="a.color">{{ a.initials }}</span>
+                      <span class="activity__id">
+                        <span class="activity__name">{{ a.actor }}</span>
+                        <span class="activity__email">{{ a.email || a.target }}</span>
+                      </span>
+                    </div>
+                  </td>
+                  <td class="activity__plan">{{ a.action }} <span class="activity__target">{{ a.target }}</span></td>
+                  <td class="activity__date">{{ a.date }}</td>
+                  <td><span class="status status--{{ statusClass(a.status) }}">{{ a.status }}</span></td>
+                  <td class="activity__amount">{{ a.amount || '—' }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <div class="col">
+          <article class="card glass card--insights">
+            <div class="card__head">
+              <div>
+                <h2 class="card__title">System health</h2>
+                <span class="insight-pill">99.98%</span>
+              </div>
+              <p class="card__sub card__sub--mt">All core services running</p>
+            </div>
+            <div class="goal">
+              <svg viewBox="0 0 160 160" width="140" height="140" role="img" aria-label="System health progress">
+                <circle class="goal__track" cx="80" cy="80" r="54"></circle>
+                <circle class="goal__ring" cx="80" cy="80" r="54" transform="rotate(-90 80 80)" [attr.stroke-dasharray]="goalRingDash"></circle>
+              </svg>
+              <div class="goal__center">
+                <span class="goal__pct">{{ goalPct }}%</span>
+                <span class="goal__cap">healthy</span>
+              </div>
+            </div>
+            <ul class="bars">
+              <li *ngFor="let b of progressBars">
+                <div class="bars__top">
+                  <span class="bars__label">{{ b.label }}</span>
+                  <span class="bars__pct">{{ b.pct }}%</span>
+                </div>
+                <div class="bars__track">
+                  <span class="bars__fill" [style.width.%]="b.pct"></span>
+                </div>
+              </li>
+            </ul>
+          </article>
+
+          <article class="card glass card--quick card--insights-panel">
+            <div class="card__head">
+              <div>
+                <h2 class="card__title">Quick insights</h2>
+                <p class="card__sub">Auto-detected from your metrics</p>
+              </div>
+              <span class="insights-count">{{ insights.length }}</span>
+            </div>
+            <ul class="insights">
+              <li *ngFor="let i of insights" class="insights__item insights__item--{{ i.tag }}">
+                <span class="insights__tag insights__tag--{{ i.tag }}">{{ i.tag }}</span>
+                <div class="insights__body">
+                  <div class="insights__row">
+                    <p class="insights__title">{{ i.title }}</p>
+                    <span class="insights__time" *ngIf="i.time">{{ i.time }}</span>
+                  </div>
+                  <p class="insights__text">{{ i.text }}</p>
+                  <div class="insights__meta" *ngIf="i.metric">
+                    <span class="insights__metric insights__metric--{{ i.tag }}">{{ i.metric }}</span>
+                    <span class="insights__metric-label">{{ i.metricLabel }}</span>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

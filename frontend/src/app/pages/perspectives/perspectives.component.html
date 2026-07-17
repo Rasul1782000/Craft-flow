@@ -1,0 +1,302 @@
+<div class="min-h-screen bg-[#050505] selection:bg-[#FF4500] selection:text-white">
+  <div class="noise-overlay"></div>
+
+  <nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 py-8">
+    <div class="container mx-auto px-6 flex items-center justify-between">
+      <a routerLink="/" id="nav-logo-link" class="text-2xl font-bold tracking-tighter font-serif text-white">
+        CraftFlow.
+      </a>
+
+      <div class="hidden md:flex items-center space-x-8">
+        <a routerLink="/expertise" id="nav-expertise-link" class="text-sm text-gray-400 hover:text-white transition-colors duration-300">Solutions</a>
+        <a routerLink="/works" id="nav-works-link" class="text-sm text-gray-400 hover:text-white transition-colors duration-300">Case Studies</a>
+        <a routerLink="/perspectives" id="nav-perspectives-link" class="text-sm text-white font-medium transition-colors duration-300">Insights</a>
+      </div>
+
+      <a routerLink="/login" id="nav-cta-link" class="inline-flex items-center justify-center px-6 py-3 rounded-full text-sm font-medium bg-white text-black hover:scale-105 hover:bg-gray-100 transition-all duration-300">
+        Get a Quote
+      </a>
+    </div>
+  </nav>
+
+  <section class="relative pt-40 pb-20 overflow-hidden">
+    <div class="absolute inset-0 z-0 pointer-events-none">
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] opacity-5"
+           style="background: radial-gradient(circle, #FF4500 0%, transparent 70%);"></div>
+    </div>
+
+    <div class="container mx-auto px-6 relative z-10">
+      <div class="reveal mb-16 text-center">
+        <span class="text-[#FF4500] text-sm font-medium tracking-widest uppercase mb-4 block">Insights</span>
+        <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif">
+          Perspectives
+        </h1>
+      </div>
+
+      <p class="reveal text-center text-gray-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+        Deep dives into strategy, engineering, and the future of digital experiences. From our team to yours.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-20 relative overflow-hidden">
+    <div class="container mx-auto px-6 relative z-10">
+      <div class="reveal mb-16">
+        <a class="block group">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 bg-[#111] border border-white/10 rounded-3xl overflow-hidden hover:border-[#FF4500]/50 transition-all duration-500">
+            <div class="aspect-[16/10] lg:aspect-auto bg-gradient-to-br from-[#FF4500]/20 to-[#FF4500]/5 relative overflow-hidden">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <iconify-icon icon="lucide:sparkles" class="text-[#FF4500] text-8xl opacity-30 group-hover:scale-110 transition-transform duration-700"></iconify-icon>
+              </div>
+              <div class="absolute top-6 left-6 flex items-center gap-3">
+                <span class="bg-[#FF4500] text-black text-xs font-semibold px-3 py-1 rounded-full">Featured</span>
+                <span class="bg-black/50 backdrop-blur-sm text-white text-xs px-3 py-1 rounded-full border border-white/10">12 min read</span>
+              </div>
+            </div>
+            <div class="p-8 md:p-10 lg:p-12 flex flex-col justify-center">
+              <span class="text-[#FF4500] text-xs font-medium tracking-widest uppercase mb-4">Strategy</span>
+              <h2 class="font-serif text-3xl md:text-4xl text-white mb-4 leading-tight group-hover:text-[#FF4500] transition-colors duration-300">
+                Why 70% of Digital Transformations Fail — And How to Be the 30%
+              </h2>
+              <p class="text-gray-400 text-base leading-relaxed mb-6">
+                The gap between vision and execution is where most initiatives die. We've analyzed 200+ enterprise transformations to identify the patterns that separate success from expensive failure. Here's our framework for getting it right.
+              </p>
+              <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-full bg-[#FF4500]/20 flex items-center justify-center">
+                  <span class="text-[#FF4500] text-sm font-bold">SK</span>
+                </div>
+                <div>
+                  <span class="text-white text-sm font-medium">Sarah Kim</span>
+                  <span class="text-gray-500 text-xs block">Head of Strategy · Jul 12, 2026</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 relative overflow-hidden">
+    <div class="container mx-auto px-6 relative z-10">
+      <div class="reveal mb-16 text-center">
+        <span class="text-[#FF4500] text-sm font-medium tracking-widest uppercase mb-4 block">Articles</span>
+        <h2 class="text-5xl md:text-7xl font-serif">
+          Latest <br />
+          <span class="italic">perspectives</span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <a class="reveal group">
+          <div class="bg-[#111] border border-white/10 rounded-3xl overflow-hidden hover:border-[#FF4500]/50 transition-all duration-500 h-full flex flex-col">
+            <div class="aspect-[16/9] bg-gradient-to-br from-[#FF4500]/20 to-[#FF4500]/5 relative overflow-hidden">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <iconify-icon icon="lucide:layers" class="text-[#FF4500] text-6xl opacity-50 group-hover:scale-110 transition-transform duration-500"></iconify-icon>
+              </div>
+            </div>
+            <div class="p-8 flex flex-col flex-1">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="text-[#FF4500] text-xs font-medium tracking-wider uppercase">Brand Strategy</span>
+                <span class="w-1 h-1 rounded-full bg-white/20"></span>
+                <span class="text-gray-500 text-xs">7 min read</span>
+              </div>
+              <h3 class="text-xl text-white mb-3 font-serif group-hover:text-[#FF4500] transition-colors duration-300">
+                Rebranding in the Age of Attention
+              </h3>
+              <p class="text-gray-400 text-sm leading-relaxed flex-1">
+                Why brands that simplify win. We break down the anatomy of successful rebrands and the metrics that matter when measuring impact.
+              </p>
+              <div class="flex items-center gap-2 mt-6 text-sm text-white/50 group-hover:text-[#FF4500] transition-colors duration-300">
+                <span>Read More</span>
+                <iconify-icon icon="lucide:arrow-right" class="text-xs group-hover:translate-x-1 transition-transform duration-300"></iconify-icon>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a class="reveal group" style="transition-delay: 100ms;">
+          <div class="bg-[#111] border border-white/10 rounded-3xl overflow-hidden hover:border-[#FF4500]/50 transition-all duration-500 h-full flex flex-col">
+            <div class="aspect-[16/9] bg-gradient-to-br from-[#FF4500]/20 to-[#FF4500]/5 relative overflow-hidden">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <iconify-icon icon="lucide:palette" class="text-[#FF4500] text-6xl opacity-50 group-hover:scale-110 transition-transform duration-500"></iconify-icon>
+              </div>
+            </div>
+            <div class="p-8 flex flex-col flex-1">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="text-[#FF4500] text-xs font-medium tracking-wider uppercase">Product Design</span>
+                <span class="w-1 h-1 rounded-full bg-white/20"></span>
+                <span class="text-gray-500 text-xs">10 min read</span>
+              </div>
+              <h3 class="text-xl text-white mb-3 font-serif group-hover:text-[#FF4500] transition-colors duration-300">
+                From MVP to Market Leader
+              </h3>
+              <p class="text-gray-400 text-sm leading-relaxed flex-1">
+                A tactical framework for scaling digital products beyond the launch phase—prioritizing features, maintaining quality, and retaining users.
+              </p>
+              <div class="flex items-center gap-2 mt-6 text-sm text-white/50 group-hover:text-[#FF4500] transition-colors duration-300">
+                <span>Read More</span>
+                <iconify-icon icon="lucide:arrow-right" class="text-xs group-hover:translate-x-1 transition-transform duration-300"></iconify-icon>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a class="reveal group" style="transition-delay: 200ms;">
+          <div class="bg-[#111] border border-white/10 rounded-3xl overflow-hidden hover:border-[#FF4500]/50 transition-all duration-500 h-full flex flex-col">
+            <div class="aspect-[16/9] bg-gradient-to-br from-[#FF4500]/20 to-[#FF4500]/5 relative overflow-hidden">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <iconify-icon icon="lucide:cpu" class="text-[#FF4500] text-6xl opacity-50 group-hover:scale-110 transition-transform duration-500"></iconify-icon>
+              </div>
+            </div>
+            <div class="p-8 flex flex-col flex-1">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="text-[#FF4500] text-xs font-medium tracking-wider uppercase">Technology</span>
+                <span class="w-1 h-1 rounded-full bg-white/20"></span>
+                <span class="text-gray-500 text-xs">6 min read</span>
+              </div>
+              <h3 class="text-xl text-white mb-3 font-serif group-hover:text-[#FF4500] transition-colors duration-300">
+                AI-Augmented Design Workflows
+              </h3>
+              <p class="text-gray-400 text-sm leading-relaxed flex-1">
+                How our agency integrates generative AI into the creative process—speeding up iteration without sacrificing the human touch.
+              </p>
+              <div class="flex items-center gap-2 mt-6 text-sm text-white/50 group-hover:text-[#FF4500] transition-colors duration-300">
+                <span>Read More</span>
+                <iconify-icon icon="lucide:arrow-right" class="text-xs group-hover:translate-x-1 transition-transform duration-300"></iconify-icon>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a class="reveal group" style="transition-delay: 300ms;">
+          <div class="bg-[#111] border border-white/10 rounded-3xl overflow-hidden hover:border-[#FF4500]/50 transition-all duration-500 h-full flex flex-col">
+            <div class="aspect-[16/9] bg-gradient-to-br from-[#FF4500]/20 to-[#FF4500]/5 relative overflow-hidden">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <iconify-icon icon="lucide:globe" class="text-[#FF4500] text-6xl opacity-50 group-hover:scale-110 transition-transform duration-500"></iconify-icon>
+              </div>
+            </div>
+            <div class="p-8 flex flex-col flex-1">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="text-[#FF4500] text-xs font-medium tracking-wider uppercase">Culture</span>
+                <span class="w-1 h-1 rounded-full bg-white/20"></span>
+                <span class="text-gray-500 text-xs">8 min read</span>
+              </div>
+              <h3 class="text-xl text-white mb-3 font-serif group-hover:text-[#FF4500] transition-colors duration-300">
+                Designing for Distributed Teams
+              </h3>
+              <p class="text-gray-400 text-sm leading-relaxed flex-1">
+                Lessons from shipping products with designers and engineers across 12 time zones—tools, rituals, and communication rhythms that work.
+              </p>
+              <div class="flex items-center gap-2 mt-6 text-sm text-white/50 group-hover:text-[#FF4500] transition-colors duration-300">
+                <span>Read More</span>
+                <iconify-icon icon="lucide:arrow-right" class="text-xs group-hover:translate-x-1 transition-transform duration-300"></iconify-icon>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a class="reveal group" style="transition-delay: 400ms;">
+          <div class="bg-[#111] border border-white/10 rounded-3xl overflow-hidden hover:border-[#FF4500]/50 transition-all duration-500 h-full flex flex-col">
+            <div class="aspect-[16/9] bg-gradient-to-br from-[#FF4500]/20 to-[#FF4500]/5 relative overflow-hidden">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <iconify-icon icon="lucide:trending-up" class="text-[#FF4500] text-6xl opacity-50 group-hover:scale-110 transition-transform duration-500"></iconify-icon>
+              </div>
+            </div>
+            <div class="p-8 flex flex-col flex-1">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="text-[#FF4500] text-xs font-medium tracking-wider uppercase">Strategy</span>
+                <span class="w-1 h-1 rounded-full bg-white/20"></span>
+                <span class="text-gray-500 text-xs">5 min read</span>
+              </div>
+              <h3 class="text-xl text-white mb-3 font-serif group-hover:text-[#FF4500] transition-colors duration-300">
+                The ROI of Great Design
+              </h3>
+              <p class="text-gray-400 text-sm leading-relaxed flex-1">
+                How design-led companies outperform competitors. We analyze the data behind design investment and share case studies from our clients.
+              </p>
+              <div class="flex items-center gap-2 mt-6 text-sm text-white/50 group-hover:text-[#FF4500] transition-colors duration-300">
+                <span>Read More</span>
+                <iconify-icon icon="lucide:arrow-right" class="text-xs group-hover:translate-x-1 transition-transform duration-300"></iconify-icon>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a class="reveal group" style="transition-delay: 500ms;">
+          <div class="bg-[#111] border border-white/10 rounded-3xl overflow-hidden hover:border-[#FF4500]/50 transition-all duration-500 h-full flex flex-col">
+            <div class="aspect-[16/9] bg-gradient-to-br from-[#FF4500]/20 to-[#FF4500]/5 relative overflow-hidden">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <iconify-icon icon="lucide:accessibility" class="text-[#FF4500] text-6xl opacity-50 group-hover:scale-110 transition-transform duration-500"></iconify-icon>
+              </div>
+            </div>
+            <div class="p-8 flex flex-col flex-1">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="text-[#FF4500] text-xs font-medium tracking-wider uppercase">Design</span>
+                <span class="w-1 h-1 rounded-full bg-white/20"></span>
+                <span class="text-gray-500 text-xs">6 min read</span>
+              </div>
+              <h3 class="text-xl text-white mb-3 font-serif group-hover:text-[#FF4500] transition-colors duration-300">
+                Accessibility as a Design Principle
+              </h3>
+              <p class="text-gray-400 text-sm leading-relaxed flex-1">
+                Why inclusive design isn't optional. Practical guidelines for building products that work for everyone—with measurable business benefits.
+              </p>
+              <div class="flex items-center gap-2 mt-6 text-sm text-white/50 group-hover:text-[#FF4500] transition-colors duration-300">
+                <span>Read More</span>
+                <iconify-icon icon="lucide:arrow-right" class="text-xs group-hover:translate-x-1 transition-transform duration-300"></iconify-icon>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 relative overflow-hidden">
+    <div class="container mx-auto px-6 relative z-10">
+      <div class="reveal mb-16 text-center">
+        <span class="text-[#FF4500] text-sm font-medium tracking-widest uppercase mb-4 block">Newsletter</span>
+        <h2 class="text-5xl md:text-7xl font-serif">
+          Stay ahead <br />
+          <span class="italic">of the curve</span>
+        </h2>
+      </div>
+
+      <p class="reveal text-center text-gray-400 text-lg max-w-2xl mx-auto mb-16 leading-relaxed">
+        Weekly insights on strategy, engineering, and design—delivered to 12,000+ industry leaders. No spam. Unsubscribe anytime.
+      </p>
+
+      <div class="reveal max-w-xl mx-auto">
+        <div class="flex flex-col sm:flex-row gap-3">
+          <input type="email" placeholder="your@email.com" class="flex-1 bg-white/5 border border-white/10 rounded-full px-6 py-3 text-white text-sm placeholder:text-white/30 outline-none focus:border-[#FF4500]/50 transition-colors" />
+          <button class="bg-[#FF4500] text-white rounded-full px-8 py-3 text-sm font-medium hover:bg-[#e03d00] transition-colors whitespace-nowrap">Subscribe</button>
+        </div>
+        <p class="text-white/30 text-xs mt-4 text-center">Join 12,000+ subscribers. Read by teams at Microsoft, Salesforce, and Oracle.</p>
+      </div>
+    </div>
+
+    <div class="absolute bottom-0 right-0 w-[600px] h-[600px] opacity-5 pointer-events-none"
+         style="background: radial-gradient(circle, #FF4500 0%, transparent 70%);"></div>
+  </section>
+
+  <footer class="py-20 border-t border-white/5 bg-[#050505] relative overflow-hidden">
+    <div class="container mx-auto px-6 relative z-10">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-12">
+        <div class="w-full md:w-auto">
+          <h2 class="text-[10vw] leading-[0.8] tracking-tighter text-white/10 font-bold select-none pointer-events-none">
+            CRAFTFLOW.
+          </h2>
+        </div>
+        <div class="flex flex-col gap-8 text-right">
+          <div class="flex flex-col gap-4 text-gray-400">
+            <a href="#" id="footer-ig-link" class="hover:text-white transition-colors">Instagram</a>
+            <a href="#" id="footer-tw-link" class="hover:text-white transition-colors">Twitter</a>
+            <a href="#" id="footer-li-link" class="hover:text-white transition-colors">LinkedIn</a>
+          </div>
+          <p class="text-sm text-gray-400">&copy; 2026 CraftFlow. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>

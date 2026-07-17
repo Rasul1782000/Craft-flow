@@ -1,0 +1,147 @@
+<div class="dash">
+  <div class="aurora" aria-hidden="true"></div>
+  <div class="aurora-bloom" aria-hidden="true"></div>
+
+  <div class="dash__layout">
+    <aside class="rail">
+      <div class="rail__top">
+        <div class="rail__logo" aria-label="CraftFlow">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M16.9 16.9l2.1 2.1M19.1 4.9l-2.1 2.1M7.1 16.9l-2.1 2.1"></path>
+          </svg>
+        </div>
+
+        <nav class="rail__nav">
+          <button
+            *ngFor="let item of navItems"
+            class="rail__btn"
+            [class.rail__btn--active]="activeNav === item.id"
+            (click)="setNav(item)"
+            [attr.aria-label]="item.label"
+            [title]="item.label"
+          >
+            <span class="rail__btn-wrap">
+              <svg *ngIf="item.icon === 'dashboard'" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="7" height="9" rx="1.5"></rect>
+                <rect x="14" y="3" width="7" height="5" rx="1.5"></rect>
+                <rect x="14" y="12" width="7" height="9" rx="1.5"></rect>
+                <rect x="3" y="16" width="7" height="5" rx="1.5"></rect>
+              </svg>
+              <svg *ngIf="item.icon === 'wallet'" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2"></path>
+                <path d="M3 7v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2H5"></path>
+                <circle cx="16" cy="13" r="1.4" fill="currentColor" stroke="none"></circle>
+              </svg>
+              <svg *ngIf="item.icon === 'users'" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="9" cy="8" r="3.2"></circle>
+                <path d="M3.5 19a5.5 5.5 0 0 1 11 0"></path>
+                <path d="M16 5.2a3.2 3.2 0 0 1 0 6.1"></path>
+                <path d="M17.5 13.4A5.5 5.5 0 0 1 20.5 19"></path>
+              </svg>
+              <svg *ngIf="item.icon === 'receipt'" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 3v18l2-1.5L9 21l2-1.5L13 21l2-1.5L17 21l2-1.5V3l-2 1.5L15 3l-2 1.5L11 3 9 4.5 7 3z"></path>
+                <line x1="9" y1="8" x2="15" y2="8"></line>
+                <line x1="9" y1="12" x2="15" y2="12"></line>
+              </svg>
+              <svg *ngIf="item.icon === 'properties'" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 21V9l9-7 9 7v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"></path>
+                <path d="M9 21V13h6v8"></path>
+              </svg>
+              <svg *ngIf="item.icon === 'settings'" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="3"></circle>
+                <path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-2.7 1.1V22a2 2 0 1 1-4 0v-.1A1.6 1.6 0 0 0 7 20.4a1.6 1.6 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0-1.1-2.7H1a2 2 0 1 1 0-4h.1A1.6 1.6 0 0 0 2.6 7a1.6 1.6 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.6 1.6 0 0 0 1.8.3H7a1.6 1.6 0 0 0 1-1.5V1a2 2 0 1 1 4 0v.1a1.6 1.6 0 0 0 2.7 1.1 1.6 1.6 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0-.3 1.8V7a1.6 1.6 0 0 0 1.5 1H23a2 2 0 1 1 0 4h-.1a1.6 1.6 0 0 0-1.5 1z"></path>
+              </svg>
+
+              <span *ngIf="item.badge" class="rail__badge">{{ item.badge }}</span>
+            </span>
+          </button>
+        </nav>
+      </div>
+
+      <div class="rail__bottom">
+        <button class="rail__btn" [class.rail__btn--active]="activeNav === 'help'" aria-label="Help" title="Help" (click)="goHelp()">
+          <span class="rail__btn-wrap">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="9"></circle>
+              <path d="M9.2 9.4a2.8 2.8 0 0 1 5.4 1c0 1.9-2.8 2.3-2.8 4"></path>
+              <circle cx="12" cy="17" r="1" fill="currentColor" stroke="none"></circle>
+            </svg>
+            <span class="rail__badge">{{ helpBadge }}</span>
+          </span>
+        </button>
+        <button class="rail__avatar" aria-label="Account" (click)="logout()">{{ userInitials }}</button>
+      </div>
+    </aside>
+
+    <div class="main">
+      <header class="topbar glass">
+        <div class="topbar__left">
+          <h1 class="topbar__title">{{ title }}</h1>
+          <p class="topbar__greeting">{{ greeting }}</p>
+        </div>
+
+        <div class="topbar__right" *ngIf="!hideSearch">
+          <label class="search glass-soft">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="7"></circle>
+              <line x1="21" y1="21" x2="16.5" y2="16.5"></line>
+            </svg>
+            <input
+              type="text"
+              placeholder="Search customers, plans…"
+              [value]="searchQuery"
+              (input)="onSearch($any($event.target).value)"
+            />
+          </label>
+
+          <div class="pill-wrap">
+            <button class="pill glass-soft" aria-label="Date range" [attr.aria-expanded]="rangeOpen" (click)="toggleRange()">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="var(--primary)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="5" width="18" height="16" rx="2"></rect>
+                <line x1="3" y1="9" x2="21" y2="9"></line>
+                <line x1="8" y1="3" x2="8" y2="6"></line>
+                <line x1="16" y1="3" x2="16" y2="6"></line>
+              </svg>
+              <span>{{ activeRange.label }}</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+
+            <div class="range-menu glass" *ngIf="rangeOpen">
+              <button
+                *ngFor="let opt of dateRanges"
+                class="range-menu__item"
+                [class.range-menu__item--active]="opt.id === selectedRangeId"
+                (click)="selectRange(opt)"
+              >
+                {{ opt.label }}
+              </button>
+            </div>
+          </div>
+
+          <div class="range-backdrop" *ngIf="rangeOpen" (click)="rangeOpen = false"></div>
+
+          <button class="icon-btn glass-soft" aria-label="Notifications">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.7 21a2 2 0 0 1-3.4 0"></path>
+            </svg>
+            <span class="icon-btn__dot"></span>
+          </button>
+
+          <button class="avatar-chip glass-soft" aria-label="Account">
+              <span class="avatar-chip__photo">{{ userInitials }}</span>
+            <span class="avatar-chip__meta">
+              <span class="avatar-chip__name">{{ userName }}</span>
+              <span class="avatar-chip__role">Admin</span>
+            </span>
+          </button>
+        </div>
+      </header>
+
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>

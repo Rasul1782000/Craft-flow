@@ -1,0 +1,29 @@
+# Node / Angular
+node_modules/
+frontend/dist/
+frontend/.angular/
+frontend/src/assets/tailwind.css
+
+# Ruby / Rails
+backend/tmp/
+backend/log/
+*.log
+backend/storage/
+backend/.bundle/
+backend/vendor/bundle/
+
+# Secrets
+backend/config/master.key
+backend/config/credentials.yml.enc
+
+# Rails runtime artifacts
+backend/tmp_pid.txt
+backend/tmp_server.err
+backend/tmp_server.log
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+
+# Build logs
+build.log

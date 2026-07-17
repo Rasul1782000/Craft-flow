@@ -1,0 +1,241 @@
+:host { display: block; }
+
+$amber: #ef8f2a;
+$rose: #fb7185;
+$tan: #d9a06b;
+$emerald: #4ade80;
+
+%glass {
+  background: rgba(10, 10, 10, 0.72);
+  backdrop-filter: blur(22px) saturate(150%);
+  -webkit-backdrop-filter: blur(22px) saturate(150%);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-2);
+}
+
+%mono {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.glass { @extend %glass; }
+
+.kpis {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.kpi {
+  border-radius: 26px;
+  padding: 18px;
+
+  &__label {
+    margin: 0 0 2px;
+    font-size: 12.5px;
+    color: var(--text-tertiary);
+    font-weight: 500;
+  }
+
+  &__value {
+    margin: 0;
+    @extend %mono;
+    font-weight: 700;
+    font-size: 28px;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+  }
+}
+
+.card {
+  border-radius: 28px;
+  padding: 22px;
+}
+
+.card__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.card__title {
+  font-family: 'Space Grotesk', var(--font-sans);
+  font-weight: 600;
+  font-size: 17px;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.card__sub {
+  margin: 4px 0 0;
+  font-size: 12.5px;
+  color: var(--text-tertiary);
+}
+
+.row {
+  display: grid;
+  gap: 20px;
+
+  &--bottom {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+.activity {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+
+  th {
+    text-align: left;
+    font: 600 11px/1 var(--font-sans);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    padding: 0 12px 12px;
+  }
+
+  td {
+    padding: 14px 12px;
+    border-top: 1px solid var(--border);
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    vertical-align: middle;
+  }
+
+  &__amount {
+    @extend %mono;
+    text-align: right;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+}
+
+.donut {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 4px 0 18px;
+
+  &__track {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.06);
+    stroke-width: 26;
+  }
+
+  &__seg {
+    fill: none;
+    stroke-width: 26;
+    stroke-linecap: round;
+  }
+
+  &__center {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+  }
+
+  &__total {
+    @extend %mono;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1;
+  }
+
+  &__caption {
+    font-size: 12px;
+    color: var(--text-tertiary);
+    margin-top: 2px;
+  }
+
+  &__legend {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__label {
+    font-size: 13.5px;
+    color: var(--text-secondary);
+  }
+
+  &__pct {
+    @extend %mono;
+    margin-left: auto;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--text-primary);
+  }
+}
+
+.seg--coral { stroke: var(--primary); }
+.seg--amber { stroke: $amber; }
+.seg--rose { stroke: $rose; }
+.seg--tan { stroke: $tan; }
+
+.donut__legend li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  flex-shrink: 0;
+
+  &--coral { background: var(--primary); }
+  &--amber { background: $amber; }
+  &--rose { background: $rose; }
+  &--tan { background: $tan; }
+}
+
+@media (max-width: 1024px) {
+  .kpis { grid-template-columns: repeat(2, 1fr); }
+  .row--bottom { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 760px) {
+  .kpis { grid-template-columns: 1fr; }
+
+  .card {
+    padding: 16px;
+    border-radius: 20px;
+  }
+
+  .kpi {
+    padding: 14px;
+    border-radius: 20px;
+  }
+
+  .kpi__value {
+    font-size: 22px;
+  }
+
+  .donut__total {
+    font-size: 20px;
+  }
+}

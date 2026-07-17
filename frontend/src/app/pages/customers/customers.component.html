@@ -1,0 +1,103 @@
+<app-dashboard-shell
+  [title]="'Customers'"
+  [greeting]="'Manage your customer base and insights.'"
+  [selectedRangeId]="selectedRangeId"
+  (searchChange)="onSearch($event)"
+  (rangeChange)="onRangeChange($event)"
+>
+  <!-- Summary cards -->
+  <div class="kpis">
+    <article class="kpi glass" *ngFor="let s of summary">
+      <p class="kpi__label">{{ s.label }}</p>
+      <p class="kpi__value">{{ s.value }}</p>
+    </article>
+    <article class="kpi glass kpi--accent">
+      <p class="kpi__label">Enrolled {{ activeRangeLabel }}</p>
+      <p class="kpi__value">{{ enrolledInRange }}</p>
+    </article>
+  </div>
+
+  <!-- Engagement breakdown + Customer table -->
+  <div class="row row--bottom">
+    <article class="card glass">
+      <div class="card__head">
+        <div>
+          <h2 class="card__title">All Customers</h2>
+          <p class="card__sub">Detailed customer list with engagement insights</p>
+        </div>
+        <span class="result-count">{{ displayedCount }} shown</span>
+      </div>
+      <div class="table-wrap">
+        <table class="activity">
+          <thead>
+            <tr>
+              <th>Customer</th>
+              <th>Plan</th>
+              <th>Status</th>
+              <th>Location</th>
+              <th>LTV</th>
+              <th>Last Active</th>
+              <th>Engagement</th>
+              <th class="activity__amount">Revenue</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let c of customers">
+              <td>
+                <div class="activity__cust">
+                  <span class="activity__avatar" [style.background]="avatarColor(c.name)">{{ initials(c.name) }}</span>
+                  <span class="activity__id">
+                    <span class="activity__name">{{ c.name }}</span>
+                    <span class="activity__email">{{ c.email }}</span>
+                  </span>
+                </div>
+              </td>
+              <td class="activity__plan">{{ c.plan }}</td>
+              <td>
+                <span class="status" [class.status--completed]="c.status === 'active'" [class.status--pending]="c.status === 'inactive'">{{ c.status }}</span>
+              </td>
+              <td class="text-sm text-[#94a3b8]">{{ c.location }}</td>
+              <td class="activity__amount font-mono">{{ c.ltv }}</td>
+              <td class="text-sm text-[#94a3b8] font-mono">{{ c.lastActive }}</td>
+              <td>
+                <span class="inline-block w-2 h-2 rounded-full" [style.background]="engagementColor(c.engagement)" [title]="c.engagement"></span>
+                <span class="text-xs text-[#94a3b8] ml-1.5">{{ c.engagement }}</span>
+              </td>
+              <td class="activity__amount">{{ c.revenue }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </article>
+
+    <article class="card glass">
+      <div class="card__head">
+        <div>
+          <h2 class="card__title">Engagement</h2>
+          <p class="card__sub">Customer engagement distribution</p>
+        </div>
+      </div>
+      <div class="donut">
+        <svg viewBox="0 0 160 160" width="160" height="160" role="img" aria-label="Engagement donut">
+          <circle class="donut__track" cx="80" cy="80" r="54"></circle>
+          <circle *ngFor="let d of engagementData; let i = index" class="donut__seg" [class]="'seg--' + ['coral','amber','rose'][i]" cx="80" cy="80" r="54" transform="rotate(-90 80 80)" [attr.stroke-dasharray]="donutDash(d.pct)" [attr.stroke-dashoffset]="donutOffset(i)"></circle>
+        </svg>
+        <div class="donut__center">
+          <span class="donut__total">100%</span>
+          <span class="donut__caption">segmented</span>
+        </div>
+      </div>
+      <ul class="donut__legend">
+        <li *ngFor="let d of engagementData; let i = index">
+          <span class="dot" [class]="'dot--' + ['coral','amber','rose'][i]"></span>
+          <span class="donut__label">{{ d.label }}</span>
+          <span class="donut__pct">{{ d.pct }}%</span>
+        </li>
+      </ul>
+    </article>
+  </div>
+
+  <div class="border-t border-white/[0.06] pt-8 text-center">
+    <p class="text-xs text-[#94a3b8]">Customer satisfaction score &mdash; <span class="text-[#ff4500] font-mono">92.4%</span></p>
+  </div>
+</app-dashboard-shell>

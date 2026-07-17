@@ -1,0 +1,119 @@
+<div class="min-h-screen bg-[#050505] selection:bg-[#FF4500] selection:text-white relative overflow-hidden">
+  <div class="noise-overlay"></div>
+
+  <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden" aria-hidden="true">
+    <div class="absolute w-[600px] h-[600px] -top-[8%] -left-[6%] rounded-full"
+      style="background: radial-gradient(circle, rgba(#fff1e6, 0.85) 0%, rgba(#ff6b35, 0.7) 30%, rgba(#ff4500, 0.5) 55%, rgba(#7f1d1d, 0.3) 100%); filter: blur(80px); opacity: 0.42;">
+    </div>
+    <div class="absolute w-[520px] h-[520px] top-[28%] -right-[8%] rounded-full"
+      style="background: radial-gradient(circle, rgba(#fff0ed, 0.8) 0%, rgba(#ff7e6b, 0.65) 32%, rgba(#ff4500, 0.5) 58%, rgba(#dc2626, 0.35) 100%); filter: blur(80px); opacity: 0.36;">
+    </div>
+    <div class="absolute w-[480px] h-[480px] -bottom-[5%] left-[30%] rounded-full"
+      style="background: radial-gradient(circle, rgba(#fde8e8, 0.8) 0%, rgba(#dc2626, 0.6) 34%, rgba(#7f1d1d, 0.4) 60%, rgba(#050505, 0.2) 100%); filter: blur(80px); opacity: 0.34;">
+    </div>
+    <div class="absolute w-[560px] h-[560px] top-[55%] left-[12%] rounded-full"
+      style="background: radial-gradient(circle, rgba(#fca5a5, 0.6) 0%, rgba(#991b1b, 0.45) 40%, rgba(#050505, 0.15) 100%); filter: blur(80px); opacity: 0.55;">
+    </div>
+    <div class="absolute w-[440px] h-[440px] top-[5%] right-[25%] rounded-full"
+      style="background: radial-gradient(circle, rgba(#ff6b35, 0.5) 0%, rgba(#7f1d1d, 0.35) 45%, rgba(#050505, 0.1) 100%); filter: blur(80px); opacity: 0.50;">
+    </div>
+    <div class="absolute inset-0"
+      style="background-image: linear-gradient(rgba(#ff4500, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(#ff7e6b, 0.04) 1px, transparent 1px); background-size: 64px 64px; mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 20%, transparent 70%); -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 20%, transparent 70%);">
+    </div>
+    <div class="absolute inset-0 opacity-[0.045] mix-blend-overlay" style="background-image: url('/assets/noise.svg');"></div>
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse 55% 50% at 50% 50%, transparent 0%, rgba(5, 5, 5, 0.45) 100%);"></div>
+    <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(5, 5, 5, 0.55) 0%, transparent 20%, transparent 80%, rgba(5, 5, 5, 0.7) 100%);"></div>
+  </div>
+
+  <div class="container mx-auto px-6 pt-20 md:pt-28 pb-16 relative z-10">
+    <header class="flex items-center justify-between mb-12 md:mb-16 bg-white/[0.03] border border-white/10 rounded-2xl backdrop-blur-sm px-6 md:px-8 py-4">
+      <a routerLink="/" class="text-xl md:text-2xl font-bold tracking-tighter font-serif text-white">
+        <span>CraftFlow.</span>
+      </a>
+
+      <a (click)="goBack(); $event.preventDefault()" class="inline-flex items-center gap-3 px-6 md:px-8 py-3 rounded-xl text-sm font-medium bg-white/[0.05] border border-white/20 text-white hover:bg-[#FF4500] hover:border-[#FF4500] hover:text-black hover:shadow-[0_0_25px_rgba(255,69,0,0.5)] hover:scale-105 transition-all duration-300 group cursor-pointer">
+        <iconify-icon icon="lucide:arrow-left" class="text-sm group-hover:-translate-x-1.5 transition-transform duration-300"></iconify-icon>
+        <span>Back</span>
+      </a>
+    </header>
+
+    <main>
+      <h1 class="font-serif text-4xl md:text-6xl leading-tight text-white mb-6 md:mb-10">Documentation</h1>
+      <p class="text-gray-400 text-base md:text-xl max-w-2xl mb-10 md:mb-14">
+        Everything you need to collaborate with us effectively—from onboarding guides to technical specifications.
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-12 md:mb-14">
+        <article class="bg-[#050505]/60 border border-white/10 rounded-2xl md:rounded-3xl p-6 md:p-8 backdrop-blur-sm">
+          <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#FF4500]/10 flex items-center justify-center mb-4 md:mb-5">
+            <i class="ph ph-rocket text-[#FF4500] text-lg md:text-xl"></i>
+          </div>
+          <h2 class="font-serif text-xl md:text-2xl text-[#FF4500] mb-2 md:mb-3">Onboarding Guide</h2>
+          <p class="text-gray-400 text-sm md:text-base leading-relaxed mb-3 md:mb-4">
+            Step-by-step walkthrough of our onboarding process—from kickoff call to project kickoff, including what to prepare and what to expect.
+          </p>
+          <span class="text-white text-xs md:text-sm inline-flex items-center gap-1 hover:text-[#FF4500] transition-colors cursor-pointer">
+            Read guide <i class="ph ph-arrow-right"></i>
+          </span>
+        </article>
+
+        <article class="bg-[#050505]/60 border border-white/10 rounded-2xl md:rounded-3xl p-6 md:p-8 backdrop-blur-sm">
+          <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#FF4500]/10 flex items-center justify-center mb-4 md:mb-5">
+            <i class="ph ph-gear text-[#FF4500] text-lg md:text-xl"></i>
+          </div>
+          <h2 class="font-serif text-xl md:text-2xl text-[#FF4500] mb-2 md:mb-3">Technical Specs</h2>
+          <p class="text-gray-400 text-sm md:text-base leading-relaxed mb-3 md:mb-4">
+            Detailed documentation for our technology stack, API integrations, hosting requirements, and deployment pipelines.
+          </p>
+          <span class="text-white text-xs md:text-sm inline-flex items-center gap-1 hover:text-[#FF4500] transition-colors cursor-pointer">
+            View specs <i class="ph ph-arrow-right"></i>
+          </span>
+        </article>
+
+        <article class="bg-[#050505]/60 border border-white/10 rounded-2xl md:rounded-3xl p-6 md:p-8 backdrop-blur-sm">
+          <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#FF4500]/10 flex items-center justify-center mb-4 md:mb-5">
+            <i class="ph ph-clipboard-text text-[#FF4500] text-lg md:text-xl"></i>
+          </div>
+          <h2 class="font-serif text-xl md:text-2xl text-[#FF4500] mb-2 md:mb-3">Project Templates</h2>
+          <p class="text-gray-400 text-sm md:text-base leading-relaxed mb-3 md:mb-4">
+            Standardized briefs, milestone trackers, and communication playbooks to keep every project running smoothly.
+          </p>
+          <span class="text-white text-xs md:text-sm inline-flex items-center gap-1 hover:text-[#FF4500] transition-colors cursor-pointer">
+            Browse templates <i class="ph ph-arrow-right"></i>
+          </span>
+        </article>
+
+        <article class="bg-[#050505]/60 border border-white/10 rounded-2xl md:rounded-3xl p-6 md:p-8 backdrop-blur-sm">
+          <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#FF4500]/10 flex items-center justify-center mb-4 md:mb-5">
+            <i class="ph ph-lifebuoy text-[#FF4500] text-lg md:text-xl"></i>
+          </div>
+          <h2 class="font-serif text-xl md:text-2xl text-[#FF4500] mb-2 md:mb-3">Support Center</h2>
+          <p class="text-gray-400 text-sm md:text-base leading-relaxed mb-3 md:mb-4">
+            Frequently asked questions, troubleshooting guides, and direct channels to reach our support team when you need help.
+          </p>
+          <span class="text-white text-xs md:text-sm inline-flex items-center gap-1 hover:text-[#FF4500] transition-colors cursor-pointer">
+            Get help <i class="ph ph-arrow-right"></i>
+          </span>
+        </article>
+      </div>
+
+      <section class="border-t border-white/5 pt-10 md:pt-14">
+        <h2 class="font-serif text-2xl md:text-3xl text-white mb-4 md:mb-6">Frequently Asked Questions</h2>
+        <div class="space-y-4 md:space-y-6">
+          <div class="border border-white/10 rounded-xl md:rounded-2xl p-5 md:p-6 backdrop-blur-sm">
+            <h3 class="text-white font-medium text-sm md:text-base mb-1 md:mb-2">How long does a typical project take?</h3>
+            <p class="text-gray-400 text-xs md:text-sm leading-relaxed">Timelines vary by scope, but most brand identity projects deliver in 4-6 weeks and web platforms in 8-12 weeks from kickoff to launch.</p>
+          </div>
+          <div class="border border-white/10 rounded-xl md:rounded-2xl p-5 md:p-6 backdrop-blur-sm">
+            <h3 class="text-white font-medium text-sm md:text-base mb-1 md:mb-2">What does the discovery phase include?</h3>
+            <p class="text-gray-400 text-xs md:text-sm leading-relaxed">We conduct stakeholder interviews, competitor analysis, audience research, and brand audits to build a strategic foundation before any design work begins.</p>
+          </div>
+          <div class="border border-white/10 rounded-xl md:rounded-2xl p-5 md:p-6 backdrop-blur-sm">
+            <h3 class="text-white font-medium text-sm md:text-base mb-1 md:mb-2">Can we work together on a retainer basis?</h3>
+            <p class="text-gray-400 text-xs md:text-sm leading-relaxed">Yes. Many clients choose our Enterprise retainer model for ongoing design and development support, with dedicated bandwidth and priority turnaround.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
